@@ -18,7 +18,6 @@
 		18E526432138E514000FAB91 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E526422138E514000FAB91 /* libc++.tbd */; };
 		18E526452138E51E000FAB91 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E526442138E51E000FAB91 /* Photos.framework */; };
 		18E526482138E68C000FAB91 /* detailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E526472138E68C000FAB91 /* detailsVC.m */; };
-		18E5264B2139154D000FAB91 /* userVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5264A2139154D000FAB91 /* userVC.m */; };
 		514B153121382F60007B1BD2 /* BmobSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 514B153021382F5F007B1BD2 /* BmobSDK.framework */; };
 		5176E73B21357EDE008E7E60 /* HomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5176E73921357EDE008E7E60 /* HomeCell.m */; };
 		5176E73C21357EDE008E7E60 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5176E73A21357EDE008E7E60 /* HomeCell.xib */; };
@@ -150,6 +149,7 @@
 		51B95B8B21342912004BA34E /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51B95B8A21342912004BA34E /* UserNotifications.framework */; };
 		51B95B8D21342923004BA34E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 51B95B8C21342923004BA34E /* libz.tbd */; };
 		51B95B9021342BD9004BA34E /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 51B95B8F21342BD8004BA34E /* libsqlite3.0.tbd */; };
+		51C3A13E21396E9700568DF2 /* userVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 51C3A13D21396E9600568DF2 /* userVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -164,8 +164,6 @@
 		18E526442138E51E000FAB91 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		18E526462138E68C000FAB91 /* detailsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = detailsVC.h; sourceTree = "<group>"; };
 		18E526472138E68C000FAB91 /* detailsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = detailsVC.m; sourceTree = "<group>"; };
-		18E526492139154D000FAB91 /* userVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = userVC.h; path = CustomerService/Home/Controller/userVC.h; sourceTree = SOURCE_ROOT; };
-		18E5264A2139154D000FAB91 /* userVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = userVC.m; path = CustomerService/Home/Controller/userVC.m; sourceTree = SOURCE_ROOT; };
 		514B153021382F5F007B1BD2 /* BmobSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BmobSDK.framework; sourceTree = "<group>"; };
 		5176E73821357EDE008E7E60 /* HomeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCell.h; sourceTree = "<group>"; };
 		5176E73921357EDE008E7E60 /* HomeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCell.m; sourceTree = "<group>"; };
@@ -430,6 +428,8 @@
 		51B95B8E2134292F004BA34E /* CustomerService.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CustomerService.entitlements; sourceTree = "<group>"; };
 		51B95B8F21342BD8004BA34E /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		51B95B9121342BF1004BA34E /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		51C3A13C21396E9600568DF2 /* userVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = userVC.h; sourceTree = "<group>"; };
+		51C3A13D21396E9600568DF2 /* userVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = userVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -550,8 +550,8 @@
 		5176E73521357EC2008E7E60 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				18E526492139154D000FAB91 /* userVC.h */,
-				18E5264A2139154D000FAB91 /* userVC.m */,
+				51C3A13C21396E9600568DF2 /* userVC.h */,
+				51C3A13D21396E9600568DF2 /* userVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1187,7 +1187,7 @@
 				51B95B70213428E3004BA34E /* SDWebImageCompat.m in Sources */,
 				51B95B1E213428E3004BA34E /* StarsView.m in Sources */,
 				51B95B5C213428E3004BA34E /* AFSecurityPolicy.m in Sources */,
-				18E5264B2139154D000FAB91 /* userVC.m in Sources */,
+				51C3A13E21396E9700568DF2 /* userVC.m in Sources */,
 				51B95B50213428E3004BA34E /* MASLayoutConstraint.m in Sources */,
 				51B95B71213428E3004BA34E /* SDWebImagePrefetcher.m in Sources */,
 				51B95B3D213428E3004BA34E /* MJRefreshBackStateFooter.m in Sources */,
