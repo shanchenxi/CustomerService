@@ -7,6 +7,7 @@
 //
 
 #import "HomeTVC.h"
+#import "detailsVC.h"
 static NSString* CellID = @"HomeCell";
 @interface HomeTVC ()
 
@@ -42,6 +43,12 @@ static NSString* CellID = @"HomeCell";
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    detailsVC *detVC = [[detailsVC alloc] init];
+    [self.navigationController pushViewController:detVC animated:YES];
+    
+}
 
 
 

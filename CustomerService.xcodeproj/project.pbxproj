@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18E526342138E465000FAB91 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E526332138E464000FAB91 /* CoreLocation.framework */; };
+		18E526362138E47A000FAB91 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E526352138E47A000FAB91 /* Security.framework */; };
+		18E526382138E487000FAB91 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E526372138E487000FAB91 /* CoreGraphics.framework */; };
+		18E5263A2138E497000FAB91 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E526392138E497000FAB91 /* MobileCoreServices.framework */; };
+		18E5263C2138E4A8000FAB91 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E5263B2138E4A7000FAB91 /* CFNetwork.framework */; };
+		18E5263E2138E4D5000FAB91 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E5263D2138E4D4000FAB91 /* libz.1.2.5.tbd */; };
+		18E526402138E4F1000FAB91 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E5263F2138E4F1000FAB91 /* libicucore.tbd */; };
+		18E526412138E505000FAB91 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 51B95B9121342BF1004BA34E /* libsqlite3.tbd */; };
+		18E526432138E514000FAB91 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E526422138E514000FAB91 /* libc++.tbd */; };
+		18E526452138E51E000FAB91 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E526442138E51E000FAB91 /* Photos.framework */; };
+		18E526482138E68C000FAB91 /* detailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E526472138E68C000FAB91 /* detailsVC.m */; };
+		18E5264B2139154D000FAB91 /* userVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5264A2139154D000FAB91 /* userVC.m */; };
 		514B153121382F60007B1BD2 /* BmobSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 514B153021382F5F007B1BD2 /* BmobSDK.framework */; };
 		5176E73B21357EDE008E7E60 /* HomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5176E73921357EDE008E7E60 /* HomeCell.m */; };
 		5176E73C21357EDE008E7E60 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5176E73A21357EDE008E7E60 /* HomeCell.xib */; };
@@ -141,6 +153,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18E526332138E464000FAB91 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		18E526352138E47A000FAB91 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		18E526372138E487000FAB91 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		18E526392138E497000FAB91 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		18E5263B2138E4A7000FAB91 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		18E5263D2138E4D4000FAB91 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
+		18E5263F2138E4F1000FAB91 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		18E526422138E514000FAB91 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		18E526442138E51E000FAB91 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		18E526462138E68C000FAB91 /* detailsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = detailsVC.h; sourceTree = "<group>"; };
+		18E526472138E68C000FAB91 /* detailsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = detailsVC.m; sourceTree = "<group>"; };
+		18E526492139154D000FAB91 /* userVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = userVC.h; path = CustomerService/Home/Controller/userVC.h; sourceTree = SOURCE_ROOT; };
+		18E5264A2139154D000FAB91 /* userVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = userVC.m; path = CustomerService/Home/Controller/userVC.m; sourceTree = SOURCE_ROOT; };
 		514B153021382F5F007B1BD2 /* BmobSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BmobSDK.framework; sourceTree = "<group>"; };
 		5176E73821357EDE008E7E60 /* HomeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCell.h; sourceTree = "<group>"; };
 		5176E73921357EDE008E7E60 /* HomeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCell.m; sourceTree = "<group>"; };
@@ -412,6 +437,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18E526452138E51E000FAB91 /* Photos.framework in Frameworks */,
+				18E526432138E514000FAB91 /* libc++.tbd in Frameworks */,
+				18E526412138E505000FAB91 /* libsqlite3.tbd in Frameworks */,
+				18E526402138E4F1000FAB91 /* libicucore.tbd in Frameworks */,
+				18E5263E2138E4D5000FAB91 /* libz.1.2.5.tbd in Frameworks */,
+				18E5263C2138E4A8000FAB91 /* CFNetwork.framework in Frameworks */,
+				18E5263A2138E497000FAB91 /* MobileCoreServices.framework in Frameworks */,
+				18E526382138E487000FAB91 /* CoreGraphics.framework in Frameworks */,
+				18E526362138E47A000FAB91 /* Security.framework in Frameworks */,
+				18E526342138E465000FAB91 /* CoreLocation.framework in Frameworks */,
 				51B95B9021342BD9004BA34E /* libsqlite3.0.tbd in Frameworks */,
 				51B95B8D21342923004BA34E /* libz.tbd in Frameworks */,
 				51B95B8B21342912004BA34E /* UserNotifications.framework in Frameworks */,
@@ -448,6 +483,8 @@
 			children = (
 				5176E73D21357FAE008E7E60 /* HomeTVC.h */,
 				5176E73E21357FAE008E7E60 /* HomeTVC.m */,
+				18E526462138E68C000FAB91 /* detailsVC.h */,
+				18E526472138E68C000FAB91 /* detailsVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -513,6 +550,8 @@
 		5176E73521357EC2008E7E60 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				18E526492139154D000FAB91 /* userVC.h */,
+				18E5264A2139154D000FAB91 /* userVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -997,6 +1036,15 @@
 		51B95B8521342906004BA34E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				18E526442138E51E000FAB91 /* Photos.framework */,
+				18E526422138E514000FAB91 /* libc++.tbd */,
+				18E5263F2138E4F1000FAB91 /* libicucore.tbd */,
+				18E5263D2138E4D4000FAB91 /* libz.1.2.5.tbd */,
+				18E5263B2138E4A7000FAB91 /* CFNetwork.framework */,
+				18E526392138E497000FAB91 /* MobileCoreServices.framework */,
+				18E526372138E487000FAB91 /* CoreGraphics.framework */,
+				18E526352138E47A000FAB91 /* Security.framework */,
+				18E526332138E464000FAB91 /* CoreLocation.framework */,
 				51B95B9121342BF1004BA34E /* libsqlite3.tbd */,
 				51B95B8F21342BD8004BA34E /* libsqlite3.0.tbd */,
 				51B95B8C21342923004BA34E /* libz.tbd */,
@@ -1139,6 +1187,7 @@
 				51B95B70213428E3004BA34E /* SDWebImageCompat.m in Sources */,
 				51B95B1E213428E3004BA34E /* StarsView.m in Sources */,
 				51B95B5C213428E3004BA34E /* AFSecurityPolicy.m in Sources */,
+				18E5264B2139154D000FAB91 /* userVC.m in Sources */,
 				51B95B50213428E3004BA34E /* MASLayoutConstraint.m in Sources */,
 				51B95B71213428E3004BA34E /* SDWebImagePrefetcher.m in Sources */,
 				51B95B3D213428E3004BA34E /* MJRefreshBackStateFooter.m in Sources */,
@@ -1184,6 +1233,7 @@
 				51B95B3B213428E3004BA34E /* UIView+MJExtension.m in Sources */,
 				51B95B0F213428E2004BA34E /* NetTool.m in Sources */,
 				51B95B0D213428E2004BA34E /* SelectWindowTool.m in Sources */,
+				18E526482138E68C000FAB91 /* detailsVC.m in Sources */,
 				51B95B12213428E2004BA34E /* SetTool.m in Sources */,
 				51B95B7D213428E3004BA34E /* UIView+WebCacheOperation.m in Sources */,
 				51B95B44213428E3004BA34E /* MJRefreshGifHeader.m in Sources */,
@@ -1348,6 +1398,7 @@
 				CODE_SIGN_ENTITLEMENTS = CustomerService/CustomerService.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZAYMBJCG4F;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/CustomerService/Library/Master/BaiduMap",
@@ -1380,6 +1431,7 @@
 				CODE_SIGN_ENTITLEMENTS = CustomerService/CustomerService.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZAYMBJCG4F;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/CustomerService/Library/Master/BaiduMap",
