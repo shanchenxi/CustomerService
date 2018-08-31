@@ -11,9 +11,8 @@
 
 #import "userVC.h"
 
-@interface userVC ()<UITableViewDelegate,UITableViewDataSource>
+@interface userVC ()
 
-@property (nonatomic, strong) UITableView *tableView;
 
 @end
 
@@ -25,18 +24,14 @@
     self.view.backgroundColor = [UIColor lightGrayColor];
     
     //tableview
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, viewWidth, viewHeight - 64) style:(UITableViewStylePlain)];
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"ID_Cell"];
     [self.tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
-    [self.view addSubview:self.tableView];
     
 
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 8;
+    return 4;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
@@ -44,7 +39,7 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [[UITableViewCell alloc] init];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ID_Cell" forIndexPath:indexPath];
     
     cell.textLabel.font = [UIFont systemFontOfSize:14];
     //cell.accessoryType = UITableViewCellAccessoryNone;

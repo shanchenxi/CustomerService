@@ -6,8 +6,8 @@
 //  Copyright © 2018年 吴宏佳. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "HJKit.h"
 
-@interface userVC : UIViewController
+@interface userVC : HJTableViewController
 
 @end

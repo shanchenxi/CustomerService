@@ -67,7 +67,7 @@
         <!--Root View Controller-->
         <scene sceneID="jE5-KR-if2">
             <objects>
-                <tableViewController id="FVD-uV-m13" customClass="HJTableViewController" sceneMemberID="viewController">
+                <tableViewController id="FVD-uV-m13" customClass="ServiceTVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="asW-gK-k6I">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -96,7 +96,7 @@
         <!--Root View Controller-->
         <scene sceneID="nev-NM-jvj">
             <objects>
-                <tableViewController id="JRV-WC-Bzv" customClass="HJTableViewController" sceneMemberID="viewController">
+                <tableViewController id="JRV-WC-Bzv" customClass="userVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="og6-Ud-kCw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
