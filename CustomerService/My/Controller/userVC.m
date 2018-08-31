@@ -3,16 +3,18 @@
 //  CustomerService
 //
 //  Created by 单晨曦 on 2018/8/31.
-//  Copyright © 2018年 吴宏佳. All rights reserved.
+//  Copyright © 2018年 单晨曦. All rights reserved.
 //
 
-#define  viewWidth [UIScreen mainScreen].bounds.size.width
-#define  viewHeight [UIScreen mainScreen].bounds.size.height
 
 #import "userVC.h"
+#import "UIView+Tool.h"
+#import "LZHPersonalCenterView.h"
+#import "setIconVC.h"
 
-@interface userVC ()
+@interface userVC ()<LZHPersonalCenterViewDelegate>
 
+@property (strong, nonatomic) NSArray *arr;
 
 @end
 
@@ -22,38 +24,28 @@
     [super viewDidLoad];
     self.navigationItem.title = @"我的";
     self.view.backgroundColor = [UIColor lightGrayColor];
+
     
-    //tableview
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"ID_Cell"];
-    [self.tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
     
+    NSArray * centerArr = @[@[@"保障",@"卡包"],@[@"保养",@"信用",@"天气"],@[@"设置"]] ;
+    LZHPersonalCenterView * pcv = [[LZHPersonalCenterView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) CenterArr:centerArr isShowHeader:YES];
+    pcv.delegate = self ;
+    //按需求定是否需要
+    pcv.extendCenterRightArr = @[@[@"",@"0"],@[@"暂不需要",@"100",@"晴"],@[@""]] ;
+    [self.view addSubview:pcv];
 
 }
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    return 4;
+
+-(void)didSelectRowTitle:(NSString *)title{
+    NSLog(@"点击：---  %@",title) ;
+    [self.view showHUDWithTip:@"即将推出"];
 }
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    return 50;
+
+-(void)tapHeader{
+    setIconVC *setiVC = [[setIconVC alloc] init];
+    [self.navigationController pushViewController:setiVC animated:YES];
 }
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ID_Cell" forIndexPath:indexPath];
-    
-    cell.textLabel.font = [UIFont systemFontOfSize:14];
-    //cell.accessoryType = UITableViewCellAccessoryNone;
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
-    NSArray *arr = [[NSArray alloc] initWithObjects:@"头像", @"年龄", @"性别", @"设置", nil];
-    cell.textLabel.text = arr[indexPath.row];
-    
-    return cell;
-}
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    
-}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }

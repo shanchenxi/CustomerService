@@ -18,6 +18,11 @@
 		18E526432138E514000FAB91 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E526422138E514000FAB91 /* libc++.tbd */; };
 		18E526452138E51E000FAB91 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E526442138E51E000FAB91 /* Photos.framework */; };
 		18E526482138E68C000FAB91 /* detailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E526472138E68C000FAB91 /* detailsVC.m */; };
+		18E52654213985DB000FAB91 /* LZHHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5264D213985DB000FAB91 /* LZHHeaderView.m */; };
+		18E52655213985DB000FAB91 /* LZHPersonalCenterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5264E213985DB000FAB91 /* LZHPersonalCenterCell.m */; };
+		18E52656213985DB000FAB91 /* LZHHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E5264F213985DB000FAB91 /* LZHHeaderView.xib */; };
+		18E52657213985DB000FAB91 /* LZHPersonalCenterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E52650213985DB000FAB91 /* LZHPersonalCenterView.m */; };
+		18E5265A21399002000FAB91 /* setIconVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5265921399002000FAB91 /* setIconVC.m */; };
 		514B153121382F60007B1BD2 /* BmobSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 514B153021382F5F007B1BD2 /* BmobSDK.framework */; };
 		5176E73B21357EDE008E7E60 /* HomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5176E73921357EDE008E7E60 /* HomeCell.m */; };
 		5176E73C21357EDE008E7E60 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5176E73A21357EDE008E7E60 /* HomeCell.xib */; };
@@ -167,6 +172,15 @@
 		18E526442138E51E000FAB91 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		18E526462138E68C000FAB91 /* detailsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = detailsVC.h; sourceTree = "<group>"; };
 		18E526472138E68C000FAB91 /* detailsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = detailsVC.m; sourceTree = "<group>"; };
+		18E5264D213985DB000FAB91 /* LZHHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZHHeaderView.m; sourceTree = "<group>"; };
+		18E5264E213985DB000FAB91 /* LZHPersonalCenterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZHPersonalCenterCell.m; sourceTree = "<group>"; };
+		18E5264F213985DB000FAB91 /* LZHHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LZHHeaderView.xib; sourceTree = "<group>"; };
+		18E52650213985DB000FAB91 /* LZHPersonalCenterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZHPersonalCenterView.m; sourceTree = "<group>"; };
+		18E52651213985DB000FAB91 /* LZHPersonalCenterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZHPersonalCenterCell.h; sourceTree = "<group>"; };
+		18E52652213985DB000FAB91 /* LZHHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZHHeaderView.h; sourceTree = "<group>"; };
+		18E52653213985DB000FAB91 /* LZHPersonalCenterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZHPersonalCenterView.h; sourceTree = "<group>"; };
+		18E5265821399002000FAB91 /* setIconVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = setIconVC.h; sourceTree = "<group>"; };
+		18E5265921399002000FAB91 /* setIconVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = setIconVC.m; sourceTree = "<group>"; };
 		514B153021382F5F007B1BD2 /* BmobSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BmobSDK.framework; sourceTree = "<group>"; };
 		5176E73821357EDE008E7E60 /* HomeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCell.h; sourceTree = "<group>"; };
 		5176E73921357EDE008E7E60 /* HomeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCell.m; sourceTree = "<group>"; };
@@ -468,6 +482,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18E5264C213985DB000FAB91 /* LZHPersonalCenterView */ = {
+			isa = PBXGroup;
+			children = (
+				18E5264D213985DB000FAB91 /* LZHHeaderView.m */,
+				18E5264E213985DB000FAB91 /* LZHPersonalCenterCell.m */,
+				18E5264F213985DB000FAB91 /* LZHHeaderView.xib */,
+				18E52650213985DB000FAB91 /* LZHPersonalCenterView.m */,
+				18E52651213985DB000FAB91 /* LZHPersonalCenterCell.h */,
+				18E52652213985DB000FAB91 /* LZHHeaderView.h */,
+				18E52653213985DB000FAB91 /* LZHPersonalCenterView.h */,
+			);
+			path = LZHPersonalCenterView;
+			sourceTree = "<group>";
+		};
 		514B152F21382F5F007B1BD2 /* Bmob */ = {
 			isa = PBXGroup;
 			children = (
@@ -565,6 +593,8 @@
 			children = (
 				51C3A13C21396E9600568DF2 /* userVC.h */,
 				51C3A13D21396E9600568DF2 /* userVC.m */,
+				18E5265821399002000FAB91 /* setIconVC.h */,
+				18E5265921399002000FAB91 /* setIconVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -734,6 +764,7 @@
 		51B95A31213428E2004BA34E /* Master */ = {
 			isa = PBXGroup;
 			children = (
+				18E5264C213985DB000FAB91 /* LZHPersonalCenterView */,
 				514B152F21382F5F007B1BD2 /* Bmob */,
 				51B95A32213428E2004BA34E /* MJExtension */,
 				51B95A4F213428E2004BA34E /* MJRefresh */,
@@ -1141,6 +1172,7 @@
 				51B959DE21342583004BA34E /* Assets.xcassets in Resources */,
 				51B95B1F213428E3004BA34E /* MoreChoiceVC.xib in Resources */,
 				51B959DC21342581004BA34E /* Main.storyboard in Resources */,
+				18E52656213985DB000FAB91 /* LZHHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1151,6 +1183,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18E52657213985DB000FAB91 /* LZHPersonalCenterView.m in Sources */,
 				51B95B39213428E3004BA34E /* UIScrollView+MJExtension.m in Sources */,
 				51B95B67213428E3004BA34E /* SDWebImageManager.m in Sources */,
 				51B95B43213428E3004BA34E /* MJRefreshStateHeader.m in Sources */,
@@ -1191,6 +1224,7 @@
 				51B95B20213428E3004BA34E /* WKWebViewController.m in Sources */,
 				51B95B0C213428E2004BA34E /* InfoTool.m in Sources */,
 				51B95B4D213428E3004BA34E /* ViewController+MASAdditions.m in Sources */,
+				18E52655213985DB000FAB91 /* LZHPersonalCenterCell.m in Sources */,
 				51B95B15213428E3004BA34E /* HJNavigationController.m in Sources */,
 				51B95B68213428E3004BA34E /* UIImageView+HighlightedWebCache.m in Sources */,
 				51B95B80213428E3004BA34E /* UIButton+WebCache.m in Sources */,
@@ -1203,6 +1237,7 @@
 				51B95B5C213428E3004BA34E /* AFSecurityPolicy.m in Sources */,
 				51C3A13E21396E9700568DF2 /* userVC.m in Sources */,
 				51B95B50213428E3004BA34E /* MASLayoutConstraint.m in Sources */,
+				18E52654213985DB000FAB91 /* LZHHeaderView.m in Sources */,
 				51B95B71213428E3004BA34E /* SDWebImagePrefetcher.m in Sources */,
 				51B95B3D213428E3004BA34E /* MJRefreshBackStateFooter.m in Sources */,
 				51B95B11213428E2004BA34E /* AccountTool.m in Sources */,
@@ -1259,6 +1294,7 @@
 				51B95B84213428E3004BA34E /* BaseUserReqObj.m in Sources */,
 				51B95B2A213428E3004BA34E /* NSObject+MJCoding.m in Sources */,
 				51B95B3A213428E3004BA34E /* NSBundle+MJRefresh.m in Sources */,
+				18E5265A21399002000FAB91 /* setIconVC.m in Sources */,
 				51B95B79213428E3004BA34E /* UIImageView+WebCache.m in Sources */,
 				51B95B46213428E3004BA34E /* MJRefreshHeader.m in Sources */,
 				51C3A14121396EEE00568DF2 /* ServiceTVC.m in Sources */,

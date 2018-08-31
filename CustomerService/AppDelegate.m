@@ -46,9 +46,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [[XGPush defaultManager] reportXGNotificationInfo:launchOptions];
-    [[XGPush defaultManager] startXGWithAppID:2200262432 appKey:@"I89WTUY132GJ"
-                                     delegate:[[XGPushDelegate alloc]init]];
+//    [[XGPush defaultManager] reportXGNotificationInfo:launchOptions];
+//    [[XGPush defaultManager] startXGWithAppID:2200262432 appKey:@"I89WTUY132GJ"
+//                                     delegate:[[XGPushDelegate alloc]init]];
     //BMOB
     [Bmob registerWithAppKey:@"781b49b3232cb155d1bbfa0e500be14e"];
     
