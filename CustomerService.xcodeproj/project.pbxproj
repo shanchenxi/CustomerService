@@ -150,6 +150,9 @@
 		51B95B8D21342923004BA34E /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 51B95B8C21342923004BA34E /* libz.tbd */; };
 		51B95B9021342BD9004BA34E /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 51B95B8F21342BD8004BA34E /* libsqlite3.0.tbd */; };
 		51C3A13E21396E9700568DF2 /* userVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 51C3A13D21396E9600568DF2 /* userVC.m */; };
+		51C3A14121396EEE00568DF2 /* ServiceTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 51C3A14021396EEE00568DF2 /* ServiceTVC.m */; };
+		51C3A14521396F5500568DF2 /* ServiceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51C3A14321396F5500568DF2 /* ServiceCell.m */; };
+		51C3A14621396F5500568DF2 /* ServiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51C3A14421396F5500568DF2 /* ServiceCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -430,6 +433,11 @@
 		51B95B9121342BF1004BA34E /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		51C3A13C21396E9600568DF2 /* userVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = userVC.h; sourceTree = "<group>"; };
 		51C3A13D21396E9600568DF2 /* userVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = userVC.m; sourceTree = "<group>"; };
+		51C3A13F21396EEE00568DF2 /* ServiceTVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServiceTVC.h; sourceTree = "<group>"; };
+		51C3A14021396EEE00568DF2 /* ServiceTVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ServiceTVC.m; sourceTree = "<group>"; };
+		51C3A14221396F5500568DF2 /* ServiceCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServiceCell.h; sourceTree = "<group>"; };
+		51C3A14321396F5500568DF2 /* ServiceCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ServiceCell.m; sourceTree = "<group>"; };
+		51C3A14421396F5500568DF2 /* ServiceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -519,6 +527,8 @@
 		5176E73121357EC1008E7E60 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				51C3A13F21396EEE00568DF2 /* ServiceTVC.h */,
+				51C3A14021396EEE00568DF2 /* ServiceTVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -533,6 +543,9 @@
 		5176E73321357EC1008E7E60 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				51C3A14221396F5500568DF2 /* ServiceCell.h */,
+				51C3A14321396F5500568DF2 /* ServiceCell.m */,
+				51C3A14421396F5500568DF2 /* ServiceCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1121,6 +1134,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5176E73C21357EDE008E7E60 /* HomeCell.xib in Resources */,
+				51C3A14621396F5500568DF2 /* ServiceCell.xib in Resources */,
 				51B959E121342583004BA34E /* LaunchScreen.storyboard in Resources */,
 				51B95B1D213428E3004BA34E /* BarMenuView.xib in Resources */,
 				51B95B38213428E3004BA34E /* MJRefresh.bundle in Resources */,
@@ -1213,6 +1227,7 @@
 				51B95B14213428E2004BA34E /* CacheTool.m in Sources */,
 				51B95B29213428E3004BA34E /* MJProperty.m in Sources */,
 				51B95B3F213428E3004BA34E /* MJRefreshAutoStateFooter.m in Sources */,
+				51C3A14521396F5500568DF2 /* ServiceCell.m in Sources */,
 				51B95B53213428E3004BA34E /* MASConstraint.m in Sources */,
 				51B95B37213428E3004BA34E /* MJRefreshConst.m in Sources */,
 				51B959D621342581004BA34E /* AppDelegate.m in Sources */,
@@ -1246,6 +1261,7 @@
 				51B95B3A213428E3004BA34E /* NSBundle+MJRefresh.m in Sources */,
 				51B95B79213428E3004BA34E /* UIImageView+WebCache.m in Sources */,
 				51B95B46213428E3004BA34E /* MJRefreshHeader.m in Sources */,
+				51C3A14121396EEE00568DF2 /* ServiceTVC.m in Sources */,
 				51B95B82213428E3004BA34E /* BaseRequestObj.m in Sources */,
 				51B95B81213428E3004BA34E /* SDWebImageWebPCoder.m in Sources */,
 				51B95B2E213428E3004BA34E /* NSString+MJExtension.m in Sources */,
