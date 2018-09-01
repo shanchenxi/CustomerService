@@ -38,8 +38,8 @@
 
 -(void)didSelectRowTitle:(NSString *)title{
     NSLog(@"点击：---  %@",title) ;
-    if ([title isEqual: @"设置"]) {
-        
+    if ([title isEqual: @"卡包"]) {
+
     } else if ([title isEqual: @"信用"]){
         dashBoardVC *dabVC = [[dashBoardVC alloc] init];
         [self.navigationController pushViewController:dabVC animated:YES];
