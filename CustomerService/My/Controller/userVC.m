@@ -23,7 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"我的";
+    self.navigationItem.title = @"设置";
     self.view.backgroundColor = [UIColor lightGrayColor];
 
     
