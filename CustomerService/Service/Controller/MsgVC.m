@@ -18,6 +18,7 @@ static NSString *RightCellID = @"ServiceRightCell";
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UITextField *msgTF;
 @property (strong, nonatomic) NSMutableArray *datas;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *sendBgLayoutBottom;
 
 @end
 
@@ -32,18 +33,30 @@ static NSString *RightCellID = @"ServiceRightCell";
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     [self.tableView registerNib:[UINib nibWithNibName:LeftCellID bundle:nil] forCellReuseIdentifier:LeftCellID];
     [self.tableView registerNib:[UINib nibWithNibName:RightCellID bundle:nil] forCellReuseIdentifier:RightCellID];
-    for (NSInteger num =0; num <100 ; num++) {
+    for (NSInteger num =0; num <10 ; num++) {
         MsgObj * obj = [[MsgObj alloc]init];
         obj.uid = @(arc4random()%2).stringValue;
         obj.text = [self rondomStr:arc4random()%100+1];
         [self.datas addObject:obj];
     }
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
     
 }
+- (void)viewDidAppear:(BOOL)animated{
+[super viewDidAppear:animated];
+//    [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:self.datas.count-1    inSection:0] animated:NO scrollPosition:UITableViewScrollPositionMiddle];
+    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.datas.count-1    inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:NO];
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+}
+- (void)keyboardWillChangeFrame:(NSNotification*)ntf {
+    NSValue *rect = ntf.userInfo[UIKeyboardFrameEndUserInfoKey];
+    NSNumber *duration = ntf.userInfo[UIKeyboardAnimationDurationUserInfoKey];
+    
+    self.sendBgLayoutBottom.constant = -ScreenHeight + rect.CGRectValue.origin.y ;
+    [UIView animateWithDuration:duration.doubleValue animations:^{
+        [self.view layoutIfNeeded];
+    }];
+
 }
 - (NSString*)rondomStr:(NSInteger)len{
     NSString *base = @"五,皇,子,的,啊,打,开,束,带,结,发";
@@ -66,7 +79,7 @@ static NSString *RightCellID = @"ServiceRightCell";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 100;
+    return self.datas.count;
 }
 
 
@@ -85,6 +98,23 @@ static NSString *RightCellID = @"ServiceRightCell";
 
 - (IBAction)sendMsgAction:(UIButton *)sender {
     
+    if (self.msgTF.text.length == 0) {
+        [self.view showHUDWithTip:@"请输入内容"];
+    }
+    
+    MsgObj*obj =  [[MsgObj alloc]init];
+
+    obj.uid = @(0).stringValue;
+    obj.text = self.msgTF.text;
+    
+    [self.datas addObject:obj];
+    [self.tableView beginUpdates];
+
+    [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:self.datas.count-1    inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+
+    [self.tableView endUpdates];
+    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.datas.count-1    inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+    self.msgTF.text = @"";
 }
 
 @end
