@@ -16,7 +16,7 @@ UIKIT_EXTERN NSString *const registered ;
 #define KeyWindow [[UIApplication sharedApplication]keyWindow]
 
 ///主色调
-#define  MassTone [UIColor colorWithRed:34.f/255.f green:114.f/255.f blue:1.f alpha:1.f]
+#define  MassTone [UIColor colorWithRed:0 green:122.f/255.f blue:1.f alpha:1.f]
 
 #define HJRGBA(r,g,b,a)  [UIColor colorWithRed:(r)/255.f green:(g)/255.f blue:(b)/255.f alpha:(a)]
 #define HJCOLOR(r,g,b)  [UIColor colorWithRed:(r)/255.f green:(g)/255.f blue:(b)/255.f alpha:1.f]
