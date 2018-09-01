@@ -58,6 +58,8 @@
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     [[XGPush defaultManager] reportXGNotificationInfo:userInfo];
 }
-
+- (void)applicationDidBecomeActive:(UIApplication *)application{
+    [Bmob activateSDK];
+}
 
 @end

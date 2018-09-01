@@ -6,8 +6,8 @@
 //  Copyright © 2018年 吴宏佳. All rights reserved.
 //
 
-#import "HJTableViewCell.h"
+#import "HJKit.h"
 
-@interface ServiceCell : HJTableViewCell
+@interface ServiceLeftCell : HJTableViewCell
 
 @end

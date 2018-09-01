@@ -156,8 +156,11 @@
 		51B95B9021342BD9004BA34E /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 51B95B8F21342BD8004BA34E /* libsqlite3.0.tbd */; };
 		51C3A13E21396E9700568DF2 /* userVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 51C3A13D21396E9600568DF2 /* userVC.m */; };
 		51C3A14121396EEE00568DF2 /* ServiceTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 51C3A14021396EEE00568DF2 /* ServiceTVC.m */; };
-		51C3A14521396F5500568DF2 /* ServiceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51C3A14321396F5500568DF2 /* ServiceCell.m */; };
-		51C3A14621396F5500568DF2 /* ServiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51C3A14421396F5500568DF2 /* ServiceCell.xib */; };
+		51C3A14521396F5500568DF2 /* ServiceLeftCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51C3A14321396F5500568DF2 /* ServiceLeftCell.m */; };
+		51C3A14621396F5500568DF2 /* ServiceLeftCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51C3A14421396F5500568DF2 /* ServiceLeftCell.xib */; };
+		51ECE388213A310B008AAC87 /* ServiceRightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 51ECE386213A310B008AAC87 /* ServiceRightCell.m */; };
+		51ECE389213A310B008AAC87 /* ServiceRightCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51ECE387213A310B008AAC87 /* ServiceRightCell.xib */; };
+		51ECE38C213A3219008AAC87 /* MsgObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 51ECE38B213A3219008AAC87 /* MsgObj.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -449,9 +452,14 @@
 		51C3A13D21396E9600568DF2 /* userVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = userVC.m; sourceTree = "<group>"; };
 		51C3A13F21396EEE00568DF2 /* ServiceTVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServiceTVC.h; sourceTree = "<group>"; };
 		51C3A14021396EEE00568DF2 /* ServiceTVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ServiceTVC.m; sourceTree = "<group>"; };
-		51C3A14221396F5500568DF2 /* ServiceCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServiceCell.h; sourceTree = "<group>"; };
-		51C3A14321396F5500568DF2 /* ServiceCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ServiceCell.m; sourceTree = "<group>"; };
-		51C3A14421396F5500568DF2 /* ServiceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceCell.xib; sourceTree = "<group>"; };
+		51C3A14221396F5500568DF2 /* ServiceLeftCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServiceLeftCell.h; sourceTree = "<group>"; };
+		51C3A14321396F5500568DF2 /* ServiceLeftCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ServiceLeftCell.m; sourceTree = "<group>"; };
+		51C3A14421396F5500568DF2 /* ServiceLeftCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceLeftCell.xib; sourceTree = "<group>"; };
+		51ECE385213A310B008AAC87 /* ServiceRightCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServiceRightCell.h; sourceTree = "<group>"; };
+		51ECE386213A310B008AAC87 /* ServiceRightCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ServiceRightCell.m; sourceTree = "<group>"; };
+		51ECE387213A310B008AAC87 /* ServiceRightCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceRightCell.xib; sourceTree = "<group>"; };
+		51ECE38A213A3219008AAC87 /* MsgObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MsgObj.h; sourceTree = "<group>"; };
+		51ECE38B213A3219008AAC87 /* MsgObj.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MsgObj.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -564,6 +572,8 @@
 		5176E73221357EC1008E7E60 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				51ECE38A213A3219008AAC87 /* MsgObj.h */,
+				51ECE38B213A3219008AAC87 /* MsgObj.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -571,9 +581,12 @@
 		5176E73321357EC1008E7E60 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				51C3A14221396F5500568DF2 /* ServiceCell.h */,
-				51C3A14321396F5500568DF2 /* ServiceCell.m */,
-				51C3A14421396F5500568DF2 /* ServiceCell.xib */,
+				51C3A14221396F5500568DF2 /* ServiceLeftCell.h */,
+				51C3A14321396F5500568DF2 /* ServiceLeftCell.m */,
+				51C3A14421396F5500568DF2 /* ServiceLeftCell.xib */,
+				51ECE385213A310B008AAC87 /* ServiceRightCell.h */,
+				51ECE386213A310B008AAC87 /* ServiceRightCell.m */,
+				51ECE387213A310B008AAC87 /* ServiceRightCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1164,8 +1177,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51ECE389213A310B008AAC87 /* ServiceRightCell.xib in Resources */,
 				5176E73C21357EDE008E7E60 /* HomeCell.xib in Resources */,
-				51C3A14621396F5500568DF2 /* ServiceCell.xib in Resources */,
+				51C3A14621396F5500568DF2 /* ServiceLeftCell.xib in Resources */,
 				51B959E121342583004BA34E /* LaunchScreen.storyboard in Resources */,
 				51B95B1D213428E3004BA34E /* BarMenuView.xib in Resources */,
 				51B95B38213428E3004BA34E /* MJRefresh.bundle in Resources */,
@@ -1183,6 +1197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51ECE388213A310B008AAC87 /* ServiceRightCell.m in Sources */,
 				18E52657213985DB000FAB91 /* LZHPersonalCenterView.m in Sources */,
 				51B95B39213428E3004BA34E /* UIScrollView+MJExtension.m in Sources */,
 				51B95B67213428E3004BA34E /* SDWebImageManager.m in Sources */,
@@ -1229,6 +1244,7 @@
 				51B95B68213428E3004BA34E /* UIImageView+HighlightedWebCache.m in Sources */,
 				51B95B80213428E3004BA34E /* UIButton+WebCache.m in Sources */,
 				51B95B16213428E3004BA34E /* HJTextView.m in Sources */,
+				51ECE38C213A3219008AAC87 /* MsgObj.m in Sources */,
 				51B95B4C213428E3004BA34E /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				51B95B59213428E3004BA34E /* AFURLSessionManager.m in Sources */,
 				51B95B1A213428E3004BA34E /* HJViewController.m in Sources */,
@@ -1262,7 +1278,7 @@
 				51B95B14213428E2004BA34E /* CacheTool.m in Sources */,
 				51B95B29213428E3004BA34E /* MJProperty.m in Sources */,
 				51B95B3F213428E3004BA34E /* MJRefreshAutoStateFooter.m in Sources */,
-				51C3A14521396F5500568DF2 /* ServiceCell.m in Sources */,
+				51C3A14521396F5500568DF2 /* ServiceLeftCell.m in Sources */,
 				51B95B53213428E3004BA34E /* MASConstraint.m in Sources */,
 				51B95B37213428E3004BA34E /* MJRefreshConst.m in Sources */,
 				51B959D621342581004BA34E /* AppDelegate.m in Sources */,
