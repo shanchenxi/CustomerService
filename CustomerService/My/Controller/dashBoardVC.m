@@ -10,6 +10,7 @@
 
 #import "dashBoardVC.h"
 #import "FKDashBoardView.h"
+#import "HJKit.h"
 
 @interface dashBoardVC ()
 
@@ -24,7 +25,7 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = RGB(246, 245, 246);
-    self.view.backgroundColor = [UIColor orangeColor];
+    self.view.backgroundColor = MassTone;
     self.navigationItem.title = @"信用分数";
     CGSize screenSize = [UIScreen mainScreen].bounds.size;
     UIColor *color = [UIColor colorWithWhite:1 alpha:0.2];
