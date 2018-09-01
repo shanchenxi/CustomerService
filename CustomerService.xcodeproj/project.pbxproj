@@ -23,6 +23,8 @@
 		18E52656213985DB000FAB91 /* LZHHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E5264F213985DB000FAB91 /* LZHHeaderView.xib */; };
 		18E52657213985DB000FAB91 /* LZHPersonalCenterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E52650213985DB000FAB91 /* LZHPersonalCenterView.m */; };
 		18E5265A21399002000FAB91 /* setIconVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5265921399002000FAB91 /* setIconVC.m */; };
+		18E5265D213A2E09000FAB91 /* userSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5265C213A2E09000FAB91 /* userSettingVC.m */; };
+		18E52660213A347B000FAB91 /* aboutUsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5265F213A347B000FAB91 /* aboutUsVC.m */; };
 		514B153121382F60007B1BD2 /* BmobSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 514B153021382F5F007B1BD2 /* BmobSDK.framework */; };
 		5176E73B21357EDE008E7E60 /* HomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5176E73921357EDE008E7E60 /* HomeCell.m */; };
 		5176E73C21357EDE008E7E60 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5176E73A21357EDE008E7E60 /* HomeCell.xib */; };
@@ -184,6 +186,10 @@
 		18E52653213985DB000FAB91 /* LZHPersonalCenterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZHPersonalCenterView.h; sourceTree = "<group>"; };
 		18E5265821399002000FAB91 /* setIconVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = setIconVC.h; sourceTree = "<group>"; };
 		18E5265921399002000FAB91 /* setIconVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = setIconVC.m; sourceTree = "<group>"; };
+		18E5265B213A2E09000FAB91 /* userSettingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = userSettingVC.h; sourceTree = "<group>"; };
+		18E5265C213A2E09000FAB91 /* userSettingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = userSettingVC.m; sourceTree = "<group>"; };
+		18E5265E213A347B000FAB91 /* aboutUsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = aboutUsVC.h; sourceTree = "<group>"; };
+		18E5265F213A347B000FAB91 /* aboutUsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = aboutUsVC.m; sourceTree = "<group>"; };
 		514B153021382F5F007B1BD2 /* BmobSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BmobSDK.framework; sourceTree = "<group>"; };
 		5176E73821357EDE008E7E60 /* HomeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCell.h; sourceTree = "<group>"; };
 		5176E73921357EDE008E7E60 /* HomeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCell.m; sourceTree = "<group>"; };
@@ -608,6 +614,10 @@
 				51C3A13D21396E9600568DF2 /* userVC.m */,
 				18E5265821399002000FAB91 /* setIconVC.h */,
 				18E5265921399002000FAB91 /* setIconVC.m */,
+				18E5265B213A2E09000FAB91 /* userSettingVC.h */,
+				18E5265C213A2E09000FAB91 /* userSettingVC.m */,
+				18E5265E213A347B000FAB91 /* aboutUsVC.h */,
+				18E5265F213A347B000FAB91 /* aboutUsVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1259,6 +1269,7 @@
 				51B95B11213428E2004BA34E /* AccountTool.m in Sources */,
 				51B95B48213428E3004BA34E /* MJRefreshAutoFooter.m in Sources */,
 				51B95B1C213428E3004BA34E /* HJTableViewController.m in Sources */,
+				18E5265D213A2E09000FAB91 /* userSettingVC.m in Sources */,
 				51B959E421342583004BA34E /* main.m in Sources */,
 				51B95B06213428E2004BA34E /* UIView+Tool.m in Sources */,
 				51B95B5B213428E3004BA34E /* AFNetworkReachabilityManager.m in Sources */,
@@ -1304,6 +1315,7 @@
 				51B95B7D213428E3004BA34E /* UIView+WebCacheOperation.m in Sources */,
 				51B95B44213428E3004BA34E /* MJRefreshGifHeader.m in Sources */,
 				51B95B19213428E3004BA34E /* HJTabBarController.m in Sources */,
+				18E52660213A347B000FAB91 /* aboutUsVC.m in Sources */,
 				51B95B7A213428E3004BA34E /* NSImage+WebCache.m in Sources */,
 				51B95B54213428E3004BA34E /* MASViewConstraint.m in Sources */,
 				51B95B66213428E3004BA34E /* MKAnnotationView+WebCache.m in Sources */,
