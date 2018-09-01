@@ -479,6 +479,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51B95B56213428E3004BA34E /* libXG-SDK.a in Frameworks */,
 				18E526452138E51E000FAB91 /* Photos.framework in Frameworks */,
 				18E526432138E514000FAB91 /* libc++.tbd in Frameworks */,
 				18E526412138E505000FAB91 /* libsqlite3.tbd in Frameworks */,
@@ -495,7 +496,6 @@
 				51B95B892134290C004BA34E /* SystemConfiguration.framework in Frameworks */,
 				51B95B8721342906004BA34E /* CoreTelephony.framework in Frameworks */,
 				514B153121382F60007B1BD2 /* BmobSDK.framework in Frameworks */,
-				51B95B56213428E3004BA34E /* libXG-SDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1501,9 +1501,6 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/CustomerService/Library/Master/BaiduMap",
-					"$(PROJECT_DIR)/CustomerService/Library/Master/Alipay",
-					"$(PROJECT_DIR)/CustomerService/Library/Master/Tencent",
 					"$(PROJECT_DIR)/CustomerService/Library/Master/Bmob",
 				);
 				INFOPLIST_FILE = CustomerService/Info.plist;
@@ -1514,9 +1511,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/CustomerService/Library/Master/BaiduMap/thirdlibs",
 					"$(PROJECT_DIR)/CustomerService/Library/Master/Push",
-					"$(PROJECT_DIR)/CustomerService/Library/Master/Tencent",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.whirlie.CustomerService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1534,9 +1529,6 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/CustomerService/Library/Master/BaiduMap",
-					"$(PROJECT_DIR)/CustomerService/Library/Master/Alipay",
-					"$(PROJECT_DIR)/CustomerService/Library/Master/Tencent",
 					"$(PROJECT_DIR)/CustomerService/Library/Master/Bmob",
 				);
 				INFOPLIST_FILE = CustomerService/Info.plist;
@@ -1547,9 +1539,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/CustomerService/Library/Master/BaiduMap/thirdlibs",
 					"$(PROJECT_DIR)/CustomerService/Library/Master/Push",
-					"$(PROJECT_DIR)/CustomerService/Library/Master/Tencent",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.whirlie.CustomerService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
