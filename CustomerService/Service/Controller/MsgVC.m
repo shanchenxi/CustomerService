@@ -34,7 +34,6 @@ static NSString *RightCellID = @"ServiceRightCell";
     [self.tableView registerNib:[UINib nibWithNibName:LeftCellID bundle:nil] forCellReuseIdentifier:LeftCellID];
     [self.tableView registerNib:[UINib nibWithNibName:RightCellID bundle:nil] forCellReuseIdentifier:RightCellID];
     
-    self.tableView.tableFooterView = [[UIView alloc] init];
 
     for (NSInteger num =0; num <10 ; num++) {
         MsgObj * obj = [[MsgObj alloc]init];
