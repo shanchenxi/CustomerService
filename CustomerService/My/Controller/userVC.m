@@ -11,6 +11,7 @@
 #import "UIView+Tool.h"
 #import "LZHPersonalCenterView.h"
 #import "setIconVC.h"
+#import "userSettingVC.h"
 
 @interface userVC ()<LZHPersonalCenterViewDelegate>
 
@@ -38,7 +39,12 @@
 
 -(void)didSelectRowTitle:(NSString *)title{
     NSLog(@"点击：---  %@",title) ;
-    [self.view showHUDWithTip:@"即将推出"];
+    if ([title isEqual: @"设置"]) {
+        userSettingVC *usersetVC = [[userSettingVC alloc] init];
+        [self.navigationController pushViewController:usersetVC animated:YES];
+    } else {
+        [self.view showHUDWithTip:@"即将推出"];
+    }
 }
 
 -(void)tapHeader{
