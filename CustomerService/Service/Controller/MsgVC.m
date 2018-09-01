@@ -33,6 +33,9 @@ static NSString *RightCellID = @"ServiceRightCell";
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     [self.tableView registerNib:[UINib nibWithNibName:LeftCellID bundle:nil] forCellReuseIdentifier:LeftCellID];
     [self.tableView registerNib:[UINib nibWithNibName:RightCellID bundle:nil] forCellReuseIdentifier:RightCellID];
+    
+    self.tableView.tableFooterView = [[UIView alloc] init];
+
     for (NSInteger num =0; num <10 ; num++) {
         MsgObj * obj = [[MsgObj alloc]init];
         obj.uid = @(arc4random()%2).stringValue;
@@ -92,7 +95,9 @@ static NSString *RightCellID = @"ServiceRightCell";
     return cell;
 }
 
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self.msgTF resignFirstResponder];
+}
 
 #pragma mark - IBAction
 
