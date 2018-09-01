@@ -25,6 +25,8 @@
 		18E5265A21399002000FAB91 /* setIconVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5265921399002000FAB91 /* setIconVC.m */; };
 		18E5265D213A2E09000FAB91 /* userSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5265C213A2E09000FAB91 /* userSettingVC.m */; };
 		18E52660213A347B000FAB91 /* aboutUsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5265F213A347B000FAB91 /* aboutUsVC.m */; };
+		18E52664213A944B000FAB91 /* FKDashBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E52662213A944A000FAB91 /* FKDashBoardView.m */; };
+		18E52667213A946E000FAB91 /* dashBoardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E52666213A946E000FAB91 /* dashBoardVC.m */; };
 		514B153121382F60007B1BD2 /* BmobSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 514B153021382F5F007B1BD2 /* BmobSDK.framework */; };
 		5176E73B21357EDE008E7E60 /* HomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5176E73921357EDE008E7E60 /* HomeCell.m */; };
 		5176E73C21357EDE008E7E60 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5176E73A21357EDE008E7E60 /* HomeCell.xib */; };
@@ -190,6 +192,10 @@
 		18E5265C213A2E09000FAB91 /* userSettingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = userSettingVC.m; sourceTree = "<group>"; };
 		18E5265E213A347B000FAB91 /* aboutUsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = aboutUsVC.h; sourceTree = "<group>"; };
 		18E5265F213A347B000FAB91 /* aboutUsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = aboutUsVC.m; sourceTree = "<group>"; };
+		18E52662213A944A000FAB91 /* FKDashBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKDashBoardView.m; sourceTree = "<group>"; };
+		18E52663213A944B000FAB91 /* FKDashBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKDashBoardView.h; sourceTree = "<group>"; };
+		18E52665213A946E000FAB91 /* dashBoardVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dashBoardVC.h; sourceTree = "<group>"; };
+		18E52666213A946E000FAB91 /* dashBoardVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dashBoardVC.m; sourceTree = "<group>"; };
 		514B153021382F5F007B1BD2 /* BmobSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BmobSDK.framework; sourceTree = "<group>"; };
 		5176E73821357EDE008E7E60 /* HomeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCell.h; sourceTree = "<group>"; };
 		5176E73921357EDE008E7E60 /* HomeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCell.m; sourceTree = "<group>"; };
@@ -510,6 +516,15 @@
 			path = LZHPersonalCenterView;
 			sourceTree = "<group>";
 		};
+		18E52661213A943A000FAB91 /* DashBoardView */ = {
+			isa = PBXGroup;
+			children = (
+				18E52663213A944B000FAB91 /* FKDashBoardView.h */,
+				18E52662213A944A000FAB91 /* FKDashBoardView.m */,
+			);
+			path = DashBoardView;
+			sourceTree = "<group>";
+		};
 		514B152F21382F5F007B1BD2 /* Bmob */ = {
 			isa = PBXGroup;
 			children = (
@@ -618,6 +633,8 @@
 				18E5265C213A2E09000FAB91 /* userSettingVC.m */,
 				18E5265E213A347B000FAB91 /* aboutUsVC.h */,
 				18E5265F213A347B000FAB91 /* aboutUsVC.m */,
+				18E52665213A946E000FAB91 /* dashBoardVC.h */,
+				18E52666213A946E000FAB91 /* dashBoardVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -787,6 +804,7 @@
 		51B95A31213428E2004BA34E /* Master */ = {
 			isa = PBXGroup;
 			children = (
+				18E52661213A943A000FAB91 /* DashBoardView */,
 				18E5264C213985DB000FAB91 /* LZHPersonalCenterView */,
 				514B152F21382F5F007B1BD2 /* Bmob */,
 				51B95A32213428E2004BA34E /* MJExtension */,
@@ -1249,6 +1267,7 @@
 				51B95B20213428E3004BA34E /* WKWebViewController.m in Sources */,
 				51B95B0C213428E2004BA34E /* InfoTool.m in Sources */,
 				51B95B4D213428E3004BA34E /* ViewController+MASAdditions.m in Sources */,
+				18E52664213A944B000FAB91 /* FKDashBoardView.m in Sources */,
 				18E52655213985DB000FAB91 /* LZHPersonalCenterCell.m in Sources */,
 				51B95B15213428E3004BA34E /* HJNavigationController.m in Sources */,
 				51B95B68213428E3004BA34E /* UIImageView+HighlightedWebCache.m in Sources */,
@@ -1260,6 +1279,7 @@
 				51B95B1A213428E3004BA34E /* HJViewController.m in Sources */,
 				51B95B70213428E3004BA34E /* SDWebImageCompat.m in Sources */,
 				51B95B1E213428E3004BA34E /* StarsView.m in Sources */,
+				18E52667213A946E000FAB91 /* dashBoardVC.m in Sources */,
 				51B95B5C213428E3004BA34E /* AFSecurityPolicy.m in Sources */,
 				51C3A13E21396E9700568DF2 /* userVC.m in Sources */,
 				51B95B50213428E3004BA34E /* MASLayoutConstraint.m in Sources */,

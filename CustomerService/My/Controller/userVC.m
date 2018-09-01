@@ -12,6 +12,7 @@
 #import "LZHPersonalCenterView.h"
 #import "setIconVC.h"
 #import "userSettingVC.h"
+#import "dashBoardVC.h"
 
 @interface userVC ()<LZHPersonalCenterViewDelegate>
 
@@ -27,12 +28,11 @@
     self.view.backgroundColor = [UIColor lightGrayColor];
 
     
-    
     NSArray * centerArr = @[@[@"保障",@"卡包"],@[@"保养",@"信用",@"天气"],@[@"设置"]] ;
     LZHPersonalCenterView * pcv = [[LZHPersonalCenterView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) CenterArr:centerArr isShowHeader:YES];
     pcv.delegate = self ;
     //按需求定是否需要
-    pcv.extendCenterRightArr = @[@[@"",@"0"],@[@"暂不需要",@"100",@"晴"],@[@""]] ;
+    pcv.extendCenterRightArr = @[@[@"",@"0"],@[@"暂不需要",@"371",@""],@[@""]] ;
     [self.view addSubview:pcv];
 
 }
@@ -42,7 +42,10 @@
     if ([title isEqual: @"设置"]) {
         userSettingVC *usersetVC = [[userSettingVC alloc] init];
         [self.navigationController pushViewController:usersetVC animated:YES];
-    } else {
+    } else if ([title isEqual: @"信用"]){
+        dashBoardVC *dabVC = [[dashBoardVC alloc] init];
+        [self.navigationController pushViewController:dabVC animated:YES];
+    }else {
         [self.view showHUDWithTip:@"即将推出"];
     }
 }
