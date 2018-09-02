@@ -8,10 +8,9 @@
 
 #import "ServiceTVC.h"
 #import <BmobSDK/Bmob.h>
-#import "MsgObj.h"
 
-static NSString *LeftCellID = @"ServiceLeftCell";
-static NSString *RightCellID = @"ServiceRightCell";
+
+
 @interface ServiceTVC ()
 @property (strong, nonatomic) NSString *lastText;
 

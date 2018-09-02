@@ -13,6 +13,7 @@
 
 static NSString *LeftCellID = @"ServiceLeftCell";
 static NSString *RightCellID = @"ServiceRightCell";
+static NSString *KeCellID = @"ServiceKeCell";
 
 @interface MsgVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -31,18 +32,19 @@ static NSString *RightCellID = @"ServiceRightCell";
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
 #if DEBUG
-     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"模拟" style:0 target:self action:@selector(heSendMsg)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"模拟" style:0 target:self action:@selector(heSendMsg)];
 #endif
     
     [self.tableView registerNib:[UINib nibWithNibName:LeftCellID bundle:nil] forCellReuseIdentifier:LeftCellID];
     [self.tableView registerNib:[UINib nibWithNibName:RightCellID bundle:nil] forCellReuseIdentifier:RightCellID];
+    [self.tableView registerNib:[UINib nibWithNibName:KeCellID bundle:nil] forCellReuseIdentifier:KeCellID];
     self.tableView.rowHeight = UITableViewAutomaticDimension;
-
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
     
     //查找表
     BmobQuery   *bquery = [BmobQuery queryWithClassName:@"ServiceMsg"];
-//    bquery.limit = 10;
+    //    bquery.limit = 10;
     [bquery orderByAscending:@"updatedAt"];
     //查找GameScore表里面的数据
     [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
@@ -56,22 +58,22 @@ static NSString *RightCellID = @"ServiceRightCell";
                 obj.role = [bmob objectForKey:@"role"];
                 obj.text = [bmob objectForKey:@"text"];
                 obj.app_store_url = [bmob objectForKey:@"app_store_url"];
-                obj.img_url = [bmob objectForKey:@"img_url"];
+                obj.android_url = [bmob objectForKey:@"android_url"];
                 obj.h5_url = [bmob objectForKey:@"h5_url"];
                 obj.isSend = YES;
                 [self.datas addObject:obj];
             }
             [self.tableView reloadData];
-    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.datas.count-1    inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:NO];
+            [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.datas.count-1    inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:NO];
         }
     }];
     
 }
 - (void)viewDidAppear:(BOOL)animated{
-[super viewDidAppear:animated];
-//    [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:self.datas.count-1    inSection:0] animated:NO scrollPosition:UITableViewScrollPositionMiddle];
-
-
+    [super viewDidAppear:animated];
+    //    [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:self.datas.count-1    inSection:0] animated:NO scrollPosition:UITableViewScrollPositionMiddle];
+    
+    
 }
 - (void)keyboardWillChangeFrame:(NSNotification*)ntf {
     NSValue *rect = ntf.userInfo[UIKeyboardFrameEndUserInfoKey];
@@ -81,7 +83,7 @@ static NSString *RightCellID = @"ServiceRightCell";
     [UIView animateWithDuration:duration.doubleValue animations:^{
         [self.view layoutIfNeeded];
     }];
-
+    
 }
 - (NSString*)rondomStr:(NSInteger)len{
     NSString *base = @"五,皇,子,的,啊,打,开,束,带,结,发";
@@ -111,7 +113,19 @@ static NSString *RightCellID = @"ServiceRightCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MsgObj*obj =  self.datas[indexPath.row];
-    NSString* ID =[obj.role isEqualToString:@"he"]?LeftCellID:RightCellID;
+    NSString* ID = nil;
+    
+    if ([obj.role isEqualToString:@"he"]) {
+        ID =LeftCellID;
+        
+    }else if ([obj.role isEqualToString:@"me"]){
+        ID =RightCellID;
+        
+    }else if ([obj.role isEqualToString:@"ke"]){
+        ID =KeCellID;
+        
+    }
+    
     HJTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID forIndexPath:indexPath];
     cell.obj= obj;
     
@@ -121,10 +135,15 @@ static NSString *RightCellID = @"ServiceRightCell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     MsgObj*obj =  self.datas[indexPath.row];
     NSURL* app_store_url = [NSURL URLWithString:obj.app_store_url];
+    NSURL* android_url = [NSURL URLWithString:obj.android_url];
+    
     NSURL* h5_url = [NSURL URLWithString:obj.h5_url];
-
+    
     if ([[UIApplication sharedApplication]canOpenURL:app_store_url]) {
         [[UIApplication sharedApplication]openURL:app_store_url];
+    }
+    if ([[UIApplication sharedApplication]canOpenURL:android_url]) {
+        [[UIApplication sharedApplication]openURL:android_url];
     }
     else if ([[UIApplication sharedApplication]canOpenURL:h5_url]) {
         [[UIApplication sharedApplication]openURL:h5_url];
@@ -142,15 +161,15 @@ static NSString *RightCellID = @"ServiceRightCell";
     BmobObject *gameScore = [BmobObject objectWithClassName:@"ServiceMsg"];
     [gameScore setObject:obj.role forKey:@"role"];
     [gameScore setObject:obj.text forKey:@"text"];
-    [gameScore setObject:obj.img_url forKey:@"img_url"];
     [gameScore setObject:obj.app_store_url forKey:@"app_store_url"];
+    [gameScore setObject:obj.android_url forKey:@"android_url"];
     [gameScore setObject:obj.h5_url forKey:@"h5_url"];
     
     [gameScore saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
         //进行操作
         obj.isSend = YES;
         [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:self.datas.count-1    inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
-
+        
         
     }];
     
@@ -172,12 +191,12 @@ static NSString *RightCellID = @"ServiceRightCell";
     }
     
     MsgObj*obj =  [[MsgObj alloc]init];
-
+    
     obj.role = @"me";
     obj.text = self.msgTF.text;
     
     [self sendMsg:obj];
-   
+    
     self.msgTF.text = @"";
 }
 
@@ -187,12 +206,12 @@ static NSString *RightCellID = @"ServiceRightCell";
     
     obj.role = @"he";
     obj.text = [self rondomStr:arc4random()%100+1];
-    obj.img_url = @"";
     obj.app_store_url = @"https://itunes.apple.com/cn/app/%E5%BE%AE%E4%BF%A1/id414478124?mt=8";
     obj.h5_url = @"https://baidu.com";
-
+    obj.android_url = @"https://google.com";
+    
     [self sendMsg:obj];
     
-
+    
 }
 @end

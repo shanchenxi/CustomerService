@@ -27,6 +27,8 @@
 		18E5266A213ACDBE000FAB91 /* aboutUsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E52669213ACDBE000FAB91 /* aboutUsVC.m */; };
 		514B153121382F60007B1BD2 /* BmobSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 514B153021382F5F007B1BD2 /* BmobSDK.framework */; };
 		514F5259213BAC6300F68FC4 /* NewsObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 514F5258213BAC6300F68FC4 /* NewsObj.m */; };
+		514F525D213C101200F68FC4 /* ServiceKeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 514F525B213C101200F68FC4 /* ServiceKeCell.m */; };
+		514F525E213C101200F68FC4 /* ServiceKeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 514F525C213C101200F68FC4 /* ServiceKeCell.xib */; };
 		5176E73B21357EDE008E7E60 /* HomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5176E73921357EDE008E7E60 /* HomeCell.m */; };
 		5176E73C21357EDE008E7E60 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5176E73A21357EDE008E7E60 /* HomeCell.xib */; };
 		5176E73F21357FAE008E7E60 /* HomeTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5176E73E21357FAE008E7E60 /* HomeTVC.m */; };
@@ -196,6 +198,9 @@
 		514B153021382F5F007B1BD2 /* BmobSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BmobSDK.framework; sourceTree = "<group>"; };
 		514F5257213BAC6300F68FC4 /* NewsObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsObj.h; sourceTree = "<group>"; };
 		514F5258213BAC6300F68FC4 /* NewsObj.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsObj.m; sourceTree = "<group>"; };
+		514F525A213C101200F68FC4 /* ServiceKeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServiceKeCell.h; sourceTree = "<group>"; };
+		514F525B213C101200F68FC4 /* ServiceKeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ServiceKeCell.m; sourceTree = "<group>"; };
+		514F525C213C101200F68FC4 /* ServiceKeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServiceKeCell.xib; sourceTree = "<group>"; };
 		5176E73821357EDE008E7E60 /* HomeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCell.h; sourceTree = "<group>"; };
 		5176E73921357EDE008E7E60 /* HomeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCell.m; sourceTree = "<group>"; };
 		5176E73A21357EDE008E7E60 /* HomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
@@ -612,6 +617,9 @@
 				51C3A14221396F5500568DF2 /* ServiceLeftCell.h */,
 				51C3A14321396F5500568DF2 /* ServiceLeftCell.m */,
 				51C3A14421396F5500568DF2 /* ServiceLeftCell.xib */,
+				514F525A213C101200F68FC4 /* ServiceKeCell.h */,
+				514F525B213C101200F68FC4 /* ServiceKeCell.m */,
+				514F525C213C101200F68FC4 /* ServiceKeCell.xib */,
 				51ECE385213A310B008AAC87 /* ServiceRightCell.h */,
 				51ECE386213A310B008AAC87 /* ServiceRightCell.m */,
 				51ECE387213A310B008AAC87 /* ServiceRightCell.xib */,
@@ -1211,6 +1219,7 @@
 				51ECE389213A310B008AAC87 /* ServiceRightCell.xib in Resources */,
 				51E49ACB213ACA6C00E0BDB8 /* MsgVC.xib in Resources */,
 				5176E73C21357EDE008E7E60 /* HomeCell.xib in Resources */,
+				514F525E213C101200F68FC4 /* ServiceKeCell.xib in Resources */,
 				51C3A14621396F5500568DF2 /* ServiceLeftCell.xib in Resources */,
 				51B959E121342583004BA34E /* LaunchScreen.storyboard in Resources */,
 				51B95B1D213428E3004BA34E /* BarMenuView.xib in Resources */,
@@ -1260,6 +1269,7 @@
 				51B95B6E213428E3004BA34E /* UIImage+MultiFormat.m in Sources */,
 				51B95B78213428E3004BA34E /* NSData+ImageContentType.m in Sources */,
 				51B95B27213428E3004BA34E /* MJPropertyType.m in Sources */,
+				514F525D213C101200F68FC4 /* ServiceKeCell.m in Sources */,
 				51B95B4E213428E3004BA34E /* MASCompositeConstraint.m in Sources */,
 				51B95B08213428E2004BA34E /* NSDate+Tool.m in Sources */,
 				51B95B2F213428E3004BA34E /* MJPropertyKey.m in Sources */,
