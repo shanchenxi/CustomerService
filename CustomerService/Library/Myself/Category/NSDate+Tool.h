@@ -23,6 +23,7 @@ typedef NS_ENUM(NSInteger, HJComparisonResult) {HJBefore = -1L, HJInSperiod, HJA
 ///Date 格式化成字符串
 - (NSString *)stringHM;
 - (NSString *)stringYMD_HM;
+- (NSString *)stringYMD_HMS;
 ///判断是不是今天
 -(BOOL)isToday;
 ///判断是不是明天

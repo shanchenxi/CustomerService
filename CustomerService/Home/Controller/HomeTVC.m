@@ -28,27 +28,33 @@ static NSString* CellID = @"HomeCell";
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(header)];;
     self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(footer)];
     [self.tableView.mj_header beginRefreshing];
-  
+    
     
 }
 - (void)header{
     //查找表
     BmobQuery  *bquery = [BmobQuery queryWithClassName:@"news"];
-    bquery.limit = 10;
-    [bquery orderByDescending:@"updatedAt"];
     if (self.datas.count > 0) {
         NewsObj *obj = self.datas.firstObject;
-        [bquery whereKey:@"updatedAt" greaterThan:obj.updatedAt.dateAll];//
+        NSDate* date = [obj.updatedAt.dateAll dateByAddingTimeInterval:1];
+        
+        NSDictionary *condiction1 = @{@"updatedAt":@{@"$gt":@{@"__type": @"Date", @"iso": date.stringYMD_HMS}}};
+        
+        [bquery addTheConstraintByAndOperationWithArray:@[condiction1]];
     }
+    bquery.limit = 5;
+    [bquery orderByDescending:@"updatedAt"];
 
+    
     //查找GameScore表里面的数据
     [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
         [self.tableView.mj_header endRefreshing];
-
+        
         if (error){
             //进行错误处理
         }else{
             
+            NSMutableArray *arr = [NSMutableArray array];
             for (BmobObject* bmob in array) {
                 NewsObj *obj = [[NewsObj alloc]init];
                 obj.title = [bmob objectForKey:@"title"];
@@ -56,8 +62,17 @@ static NSString* CellID = @"HomeCell";
                 obj.subtitle = [bmob objectForKey:@"subtitle"];
                 obj.imgs = [bmob objectForKey:@"imgs"];
                 obj.updatedAt = [bmob objectForKey:@"updatedAt"];
-                [self.datas addObject:obj];
+                [arr addObject:obj];
             }
+            if (self.datas.count > 0) {
+                NSRange range = NSMakeRange(0, [arr count]);
+                NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:range];
+                [self.datas insertObjects:arr atIndexes:indexSet];
+            }else{
+                self.datas = arr;
+            }
+            
+            
             [self.tableView reloadData];
         }
     }];
@@ -67,16 +82,18 @@ static NSString* CellID = @"HomeCell";
     BmobQuery  *bquery = [BmobQuery queryWithClassName:@"news"];
     if (self.datas.count > 0) {
         NewsObj *obj = self.datas.lastObject;
-
-        [bquery whereKey:@"updatedAt" greaterThan:obj.updatedAt];//
+        
+        NSDictionary *condiction1 = @{@"updatedAt":@{@"$lt":@{@"__type": @"Date", @"iso": obj.updatedAt}}};
+        
+        [bquery addTheConstraintByAndOperationWithArray:@[condiction1]];
     }
     bquery.limit = 5;
     [bquery orderByDescending:@"updatedAt"];
-
+    
     //查找GameScore表里面的数据
     [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
         [self.tableView.mj_footer endRefreshing];
-
+        
         if (error){
             //进行错误处理
         }else{
@@ -104,7 +121,7 @@ static NSString* CellID = @"HomeCell";
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
+    
     return self.datas.count;
 }
 

@@ -68,6 +68,12 @@
     [df setDateFormat:@"yyyy-MM-dd HH:mm"];
     return  [df stringFromDate:self];
 }
+- (NSString *)stringYMD_HMS{
+    
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    return  [df stringFromDate:self];
+}
 -(BOOL)isToday{
     NSCalendar*calendar = [NSCalendar autoupdatingCurrentCalendar];
     NSCalendarUnit unitFlags =NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay;
