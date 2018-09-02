@@ -37,6 +37,7 @@
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellTitleID];
         if (!cell) {
             cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellTitleID];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             
             UILabel *titleLab = [[UILabel alloc]init];
             [cell.contentView addSubview:titleLab];
@@ -73,6 +74,8 @@
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellTextID];
         if (!cell) {
             cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellTextID];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
             UILabel *textLab = [[UILabel alloc]init];
             [cell.contentView addSubview:textLab];
             textLab.numberOfLines = 0;
@@ -90,6 +93,8 @@
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellImgID];
         if (!cell) {
             cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellImgID];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
         }
         NSInteger tag = 1837;
         UIImageView *imgView = [cell.contentView viewWithTag:tag];
