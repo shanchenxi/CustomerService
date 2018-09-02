@@ -1,13 +1,13 @@
 //
-//  dashBoardVC.h
+//  FeedbackVC.h
 //  CustomerService
 //
-//  Created by 单晨曦 on 2018/9/1.
+//  Created by 单晨曦 on 2018/9/2.
 //  Copyright © 2018年 吴宏佳. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface dashBoardVC : UIViewController
+@interface FeedbackVC : UIViewController
 
 @end

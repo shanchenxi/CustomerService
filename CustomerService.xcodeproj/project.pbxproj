@@ -22,9 +22,9 @@
 		18E52655213985DB000FAB91 /* LZHPersonalCenterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5264E213985DB000FAB91 /* LZHPersonalCenterCell.m */; };
 		18E52656213985DB000FAB91 /* LZHHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E5264F213985DB000FAB91 /* LZHHeaderView.xib */; };
 		18E52657213985DB000FAB91 /* LZHPersonalCenterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E52650213985DB000FAB91 /* LZHPersonalCenterView.m */; };
-		18E52664213A944B000FAB91 /* FKDashBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E52662213A944A000FAB91 /* FKDashBoardView.m */; };
-		18E52667213A946E000FAB91 /* dashBoardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E52666213A946E000FAB91 /* dashBoardVC.m */; };
 		18E5266A213ACDBE000FAB91 /* aboutUsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E52669213ACDBE000FAB91 /* aboutUsVC.m */; };
+		18E5266D213C321E000FAB91 /* FeedbackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E5266C213C321E000FAB91 /* FeedbackVC.m */; };
+		18E52671213C32DD000FAB91 /* shanTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E52670213C32DD000FAB91 /* shanTextView.m */; };
 		514B153121382F60007B1BD2 /* BmobSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 514B153021382F5F007B1BD2 /* BmobSDK.framework */; };
 		514F5259213BAC6300F68FC4 /* NewsObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 514F5258213BAC6300F68FC4 /* NewsObj.m */; };
 		514F525D213C101200F68FC4 /* ServiceKeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 514F525B213C101200F68FC4 /* ServiceKeCell.m */; };
@@ -189,12 +189,12 @@
 		18E52651213985DB000FAB91 /* LZHPersonalCenterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZHPersonalCenterCell.h; sourceTree = "<group>"; };
 		18E52652213985DB000FAB91 /* LZHHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZHHeaderView.h; sourceTree = "<group>"; };
 		18E52653213985DB000FAB91 /* LZHPersonalCenterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZHPersonalCenterView.h; sourceTree = "<group>"; };
-		18E52662213A944A000FAB91 /* FKDashBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKDashBoardView.m; sourceTree = "<group>"; };
-		18E52663213A944B000FAB91 /* FKDashBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKDashBoardView.h; sourceTree = "<group>"; };
-		18E52665213A946E000FAB91 /* dashBoardVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dashBoardVC.h; sourceTree = "<group>"; };
-		18E52666213A946E000FAB91 /* dashBoardVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dashBoardVC.m; sourceTree = "<group>"; };
 		18E52668213ACDBE000FAB91 /* aboutUsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aboutUsVC.h; sourceTree = "<group>"; };
 		18E52669213ACDBE000FAB91 /* aboutUsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = aboutUsVC.m; sourceTree = "<group>"; };
+		18E5266B213C321E000FAB91 /* FeedbackVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedbackVC.h; sourceTree = "<group>"; };
+		18E5266C213C321E000FAB91 /* FeedbackVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedbackVC.m; sourceTree = "<group>"; };
+		18E5266F213C32DD000FAB91 /* shanTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shanTextView.h; sourceTree = "<group>"; };
+		18E52670213C32DD000FAB91 /* shanTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shanTextView.m; sourceTree = "<group>"; };
 		514B153021382F5F007B1BD2 /* BmobSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BmobSDK.framework; sourceTree = "<group>"; };
 		514F5257213BAC6300F68FC4 /* NewsObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsObj.h; sourceTree = "<group>"; };
 		514F5258213BAC6300F68FC4 /* NewsObj.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsObj.m; sourceTree = "<group>"; };
@@ -523,13 +523,13 @@
 			path = LZHPersonalCenterView;
 			sourceTree = "<group>";
 		};
-		18E52661213A943A000FAB91 /* DashBoardView */ = {
+		18E5266E213C32CB000FAB91 /* shanTextView */ = {
 			isa = PBXGroup;
 			children = (
-				18E52663213A944B000FAB91 /* FKDashBoardView.h */,
-				18E52662213A944A000FAB91 /* FKDashBoardView.m */,
+				18E5266F213C32DD000FAB91 /* shanTextView.h */,
+				18E52670213C32DD000FAB91 /* shanTextView.m */,
 			);
-			path = DashBoardView;
+			path = shanTextView;
 			sourceTree = "<group>";
 		};
 		514B152F21382F5F007B1BD2 /* Bmob */ = {
@@ -644,8 +644,8 @@
 				51C3A13D21396E9600568DF2 /* userVC.m */,
 				18E52668213ACDBE000FAB91 /* aboutUsVC.h */,
 				18E52669213ACDBE000FAB91 /* aboutUsVC.m */,
-				18E52665213A946E000FAB91 /* dashBoardVC.h */,
-				18E52666213A946E000FAB91 /* dashBoardVC.m */,
+				18E5266B213C321E000FAB91 /* FeedbackVC.h */,
+				18E5266C213C321E000FAB91 /* FeedbackVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -815,7 +815,7 @@
 		51B95A31213428E2004BA34E /* Master */ = {
 			isa = PBXGroup;
 			children = (
-				18E52661213A943A000FAB91 /* DashBoardView */,
+				18E5266E213C32CB000FAB91 /* shanTextView */,
 				18E5264C213985DB000FAB91 /* LZHPersonalCenterView */,
 				514B152F21382F5F007B1BD2 /* Bmob */,
 				51B95A32213428E2004BA34E /* MJExtension */,
@@ -1269,6 +1269,7 @@
 				51B95B6E213428E3004BA34E /* UIImage+MultiFormat.m in Sources */,
 				51B95B78213428E3004BA34E /* NSData+ImageContentType.m in Sources */,
 				51B95B27213428E3004BA34E /* MJPropertyType.m in Sources */,
+				18E52671213C32DD000FAB91 /* shanTextView.m in Sources */,
 				514F525D213C101200F68FC4 /* ServiceKeCell.m in Sources */,
 				51B95B4E213428E3004BA34E /* MASCompositeConstraint.m in Sources */,
 				51B95B08213428E2004BA34E /* NSDate+Tool.m in Sources */,
@@ -1281,19 +1282,18 @@
 				51B95B20213428E3004BA34E /* WKWebViewController.m in Sources */,
 				51B95B0C213428E2004BA34E /* InfoTool.m in Sources */,
 				51B95B4D213428E3004BA34E /* ViewController+MASAdditions.m in Sources */,
-				18E52664213A944B000FAB91 /* FKDashBoardView.m in Sources */,
 				18E52655213985DB000FAB91 /* LZHPersonalCenterCell.m in Sources */,
 				51B95B15213428E3004BA34E /* HJNavigationController.m in Sources */,
 				51B95B68213428E3004BA34E /* UIImageView+HighlightedWebCache.m in Sources */,
 				51B95B80213428E3004BA34E /* UIButton+WebCache.m in Sources */,
 				51B95B16213428E3004BA34E /* HJTextView.m in Sources */,
+				18E5266D213C321E000FAB91 /* FeedbackVC.m in Sources */,
 				51ECE38C213A3219008AAC87 /* MsgObj.m in Sources */,
 				51B95B4C213428E3004BA34E /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				51B95B59213428E3004BA34E /* AFURLSessionManager.m in Sources */,
 				51B95B1A213428E3004BA34E /* HJViewController.m in Sources */,
 				51B95B70213428E3004BA34E /* SDWebImageCompat.m in Sources */,
 				51B95B1E213428E3004BA34E /* StarsView.m in Sources */,
-				18E52667213A946E000FAB91 /* dashBoardVC.m in Sources */,
 				51B95B5C213428E3004BA34E /* AFSecurityPolicy.m in Sources */,
 				51C3A13E21396E9700568DF2 /* userVC.m in Sources */,
 				51B95B50213428E3004BA34E /* MASLayoutConstraint.m in Sources */,
