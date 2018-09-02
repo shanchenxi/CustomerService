@@ -20,8 +20,6 @@
     [super viewDidLoad];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
-
-   
     
 
     self.datas = [NSMutableArray arrayWithArray:[self.newsObj.imgs componentsSeparatedByString:@","]];
