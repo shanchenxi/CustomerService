@@ -42,7 +42,7 @@ static NSString* CellID = @"HomeCell";
         
         [bquery addTheConstraintByAndOperationWithArray:@[condiction1]];
     }
-    bquery.limit = 5;
+    bquery.limit = 10;
     [bquery orderByDescending:@"updatedAt"];
 
     
@@ -87,7 +87,7 @@ static NSString* CellID = @"HomeCell";
         
         [bquery addTheConstraintByAndOperationWithArray:@[condiction1]];
     }
-    bquery.limit = 5;
+    bquery.limit = 10;
     [bquery orderByDescending:@"updatedAt"];
     
     //查找GameScore表里面的数据
