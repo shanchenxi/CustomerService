@@ -30,7 +30,9 @@ static NSString *RightCellID = @"ServiceRightCell";
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+#if DEBUG
      self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"模拟" style:0 target:self action:@selector(heSendMsg)];
+#endif
     
     [self.tableView registerNib:[UINib nibWithNibName:LeftCellID bundle:nil] forCellReuseIdentifier:LeftCellID];
     [self.tableView registerNib:[UINib nibWithNibName:RightCellID bundle:nil] forCellReuseIdentifier:RightCellID];
@@ -41,7 +43,7 @@ static NSString *RightCellID = @"ServiceRightCell";
     BmobQuery   *bquery = [BmobQuery queryWithClassName:@"ServiceMsg"];
 //    bquery.limit = 10;
     [bquery orderByAscending:@"updatedAt"];
-    //查找GameScore表里面id为0c6db13c的数据
+    //查找GameScore表里面的数据
     [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
         
         if (error){
@@ -117,9 +119,14 @@ static NSString *RightCellID = @"ServiceRightCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     MsgObj*obj =  self.datas[indexPath.row];
-    NSURL*url = [NSURL URLWithString:obj.app_store_url];
-    if ([[UIApplication sharedApplication]canOpenURL:url]) {
-        [[UIApplication sharedApplication]openURL:url];
+    NSURL* app_store_url = [NSURL URLWithString:obj.app_store_url];
+    NSURL* h5_url = [NSURL URLWithString:obj.h5_url];
+
+    if ([[UIApplication sharedApplication]canOpenURL:app_store_url]) {
+        [[UIApplication sharedApplication]openURL:app_store_url];
+    }
+    else if ([[UIApplication sharedApplication]canOpenURL:h5_url]) {
+        [[UIApplication sharedApplication]openURL:h5_url];
     }
     [self.msgTF resignFirstResponder];
 }
