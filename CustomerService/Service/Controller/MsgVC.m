@@ -36,7 +36,8 @@ static NSString *RightCellID = @"ServiceRightCell";
     
     [self.tableView registerNib:[UINib nibWithNibName:LeftCellID bundle:nil] forCellReuseIdentifier:LeftCellID];
     [self.tableView registerNib:[UINib nibWithNibName:RightCellID bundle:nil] forCellReuseIdentifier:RightCellID];
-    
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
     
     //查找表
@@ -137,7 +138,7 @@ static NSString *RightCellID = @"ServiceRightCell";
     obj.isSend = NO;
     [self.datas addObject:obj];
     
-    //往GameScore表添加一条playerName为小明，分数为78的数据
+    //往表添加一条数据
     BmobObject *gameScore = [BmobObject objectWithClassName:@"ServiceMsg"];
     [gameScore setObject:obj.role forKey:@"role"];
     [gameScore setObject:obj.text forKey:@"text"];

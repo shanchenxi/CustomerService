@@ -7,6 +7,7 @@
 //
 
 #import "HomeCell.h"
+#import "NewsObj.h"
 
 @implementation HomeCell
 
@@ -20,5 +21,14 @@
 
 
 }
+- (void)setObj:(id)obj{
+    [super setObj:obj];
+    NewsObj *nObj = obj;
+    self.titleLab.text = nObj.title;
+    self.subTitleLab.text = nObj.subtitle;
+    NSString*urlStr = [nObj.imgs componentsSeparatedByString:@","][0];
+    urlStr = [urlStr stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
 
+    [self.imgView sd_setImageWithURL:[NSURL URLWithString:urlStr]];
+}
 @end

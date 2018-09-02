@@ -8,8 +8,12 @@
 
 #import "HomeTVC.h"
 #import "detailsVC.h"
+#import <BmobSDK/Bmob.h>
+#import "NewsObj.h"
+
 static NSString* CellID = @"HomeCell";
 @interface HomeTVC ()
+@property (strong, nonatomic) NSMutableArray *datas;
 
 @end
 
@@ -20,25 +24,94 @@ static NSString* CellID = @"HomeCell";
     
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     [self.tableView registerNib:[UINib nibWithNibName:CellID bundle:nil] forCellReuseIdentifier:CellID];
+    
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(header)];;
+    self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(footer)];
+    [self.tableView.mj_header beginRefreshing];
+  
+    
 }
+- (void)header{
+    //查找表
+    BmobQuery  *bquery = [BmobQuery queryWithClassName:@"news"];
+    bquery.limit = 10;
+    [bquery orderByAscending:@"updatedAt"];
+    if (self.datas.count > 0) {
+        NewsObj *obj = self.datas.firstObject;
+        [bquery whereKey:@"updatedAt" greaterThan:obj.updatedAt];//age小于18
+    }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    //查找GameScore表里面的数据
+    [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        [self.tableView.mj_header endRefreshing];
+
+        if (error){
+            //进行错误处理
+        }else{
+            
+            for (BmobObject* bmob in array) {
+                NewsObj *obj = [[NewsObj alloc]init];
+                obj.title = [bmob objectForKey:@"title"];
+                obj.text = [bmob objectForKey:@"text"];
+                obj.subtitle = [bmob objectForKey:@"subtitle"];
+                obj.imgs = [bmob objectForKey:@"imgs"];
+                obj.updatedAt = [bmob objectForKey:@"updatedAt"];
+                [self.datas addObject:obj];
+            }
+            [self.tableView reloadData];
+        }
+    }];
+}
+- (void)footer{
+    //查找表
+    BmobQuery  *bquery = [BmobQuery queryWithClassName:@"news"];
+    bquery.limit = 10;
+    [bquery orderByAscending:@"updatedAt"];
+    if (self.datas.count > 0) {
+        NewsObj *obj = self.datas.lastObject;
+        [bquery whereKey:@"updatedAt" lessThan:obj.updatedAt];//age小于18
+    }
+    
+    //查找GameScore表里面的数据
+    [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        [self.tableView.mj_footer endRefreshing];
+
+        if (error){
+            //进行错误处理
+        }else{
+            
+            for (BmobObject* bmob in array) {
+                NewsObj *obj = [[NewsObj alloc]init];
+                obj.title = [bmob objectForKey:@"title"];
+                obj.text = [bmob objectForKey:@"text"];
+                obj.subtitle = [bmob objectForKey:@"subtitle"];
+                obj.imgs = [bmob objectForKey:@"imgs"];
+                obj.updatedAt = [bmob objectForKey:@"updatedAt"];
+                [self.datas addObject:obj];
+            }
+            [self.tableView reloadData];
+        }
+    }];
+}
+- (NSMutableArray *)datas{
+    if (!_datas) {
+        _datas = [NSMutableArray array];
+    }
+    return _datas;
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return 10;
+    return self.datas.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellID forIndexPath:indexPath];
+    HJTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellID forIndexPath:indexPath];
     
-
+    cell.obj = self.datas[indexPath.row];
     
     return cell;
 }
@@ -46,6 +119,7 @@ static NSString* CellID = @"HomeCell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     detailsVC *detVC = [[detailsVC alloc] init];
+    detVC.newsObj = self.datas[indexPath.row];
     [self.navigationController pushViewController:detVC animated:YES];
     
 }

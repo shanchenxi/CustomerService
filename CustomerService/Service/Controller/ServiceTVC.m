@@ -22,6 +22,7 @@ static NSString *RightCellID = @"ServiceRightCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.tableFooterView = [[UIView alloc] init];
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
 
     
     

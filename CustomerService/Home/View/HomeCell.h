@@ -9,5 +9,8 @@
 #import "HJKit.h"
 
 @interface HomeCell : HJTableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *imgView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLab;
+@property (weak, nonatomic) IBOutlet UILabel *subTitleLab;
 
 @end

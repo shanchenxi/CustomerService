@@ -26,6 +26,7 @@
 		18E52667213A946E000FAB91 /* dashBoardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E52666213A946E000FAB91 /* dashBoardVC.m */; };
 		18E5266A213ACDBE000FAB91 /* aboutUsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E52669213ACDBE000FAB91 /* aboutUsVC.m */; };
 		514B153121382F60007B1BD2 /* BmobSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 514B153021382F5F007B1BD2 /* BmobSDK.framework */; };
+		514F5259213BAC6300F68FC4 /* NewsObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 514F5258213BAC6300F68FC4 /* NewsObj.m */; };
 		5176E73B21357EDE008E7E60 /* HomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5176E73921357EDE008E7E60 /* HomeCell.m */; };
 		5176E73C21357EDE008E7E60 /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5176E73A21357EDE008E7E60 /* HomeCell.xib */; };
 		5176E73F21357FAE008E7E60 /* HomeTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5176E73E21357FAE008E7E60 /* HomeTVC.m */; };
@@ -193,6 +194,8 @@
 		18E52668213ACDBE000FAB91 /* aboutUsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aboutUsVC.h; sourceTree = "<group>"; };
 		18E52669213ACDBE000FAB91 /* aboutUsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = aboutUsVC.m; sourceTree = "<group>"; };
 		514B153021382F5F007B1BD2 /* BmobSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BmobSDK.framework; sourceTree = "<group>"; };
+		514F5257213BAC6300F68FC4 /* NewsObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsObj.h; sourceTree = "<group>"; };
+		514F5258213BAC6300F68FC4 /* NewsObj.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsObj.m; sourceTree = "<group>"; };
 		5176E73821357EDE008E7E60 /* HomeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCell.h; sourceTree = "<group>"; };
 		5176E73921357EDE008E7E60 /* HomeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCell.m; sourceTree = "<group>"; };
 		5176E73A21357EDE008E7E60 /* HomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
@@ -556,6 +559,8 @@
 		5176E72E21357EC1008E7E60 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				514F5257213BAC6300F68FC4 /* NewsObj.h */,
+				514F5258213BAC6300F68FC4 /* NewsObj.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1283,6 +1288,7 @@
 				51C3A13E21396E9700568DF2 /* userVC.m in Sources */,
 				51B95B50213428E3004BA34E /* MASLayoutConstraint.m in Sources */,
 				18E52654213985DB000FAB91 /* LZHHeaderView.m in Sources */,
+				514F5259213BAC6300F68FC4 /* NewsObj.m in Sources */,
 				51B95B71213428E3004BA34E /* SDWebImagePrefetcher.m in Sources */,
 				51B95B3D213428E3004BA34E /* MJRefreshBackStateFooter.m in Sources */,
 				51B95B11213428E2004BA34E /* AccountTool.m in Sources */,

@@ -7,7 +7,9 @@
 //
 
 #import "HJKit.h"
+#import "NewsObj.h"
 
-@interface detailsVC : HJViewController
+@interface detailsVC : HJTableViewController
+@property (strong, nonatomic) NewsObj *newsObj;
 
 @end
