@@ -85,7 +85,7 @@ static NSString *RightCellID = @"ServiceRightCell";
     if (!cell) {
         cell = [[HJTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
     }
-    cell.imageView.image = [UIImage imageNamed:@"account_tu1"];
+    cell.imageView.image = [UIImage imageNamed:@"头像"];
     cell.textLabel.text = @"客服人员1";
     cell.detailTextLabel.text = self.lastText;
     return cell;
