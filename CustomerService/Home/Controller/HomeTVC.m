@@ -34,7 +34,7 @@ static NSString* CellID = @"HomeCell";
 - (void)header{
     //查找表
     BmobQuery  *bquery = [BmobQuery queryWithClassName:@"news"];
-    bquery.limit = 5;
+    bquery.limit = 10;
     [bquery orderByDescending:@"updatedAt"];
     if (self.datas.count > 0) {
         NewsObj *obj = self.datas.firstObject;
