@@ -34,11 +34,11 @@ static NSString* CellID = @"HomeCell";
 - (void)header{
     //查找表
     BmobQuery  *bquery = [BmobQuery queryWithClassName:@"news"];
-    bquery.limit = 10;
-    [bquery orderByAscending:@"updatedAt"];
+    bquery.limit = 5;
+    [bquery orderByDescending:@"updatedAt"];
     if (self.datas.count > 0) {
         NewsObj *obj = self.datas.firstObject;
-        [bquery whereKey:@"updatedAt" greaterThan:obj.updatedAt];//age小于18
+        [bquery whereKey:@"updatedAt" greaterThan:obj.updatedAt];//
     }
 
     //查找GameScore表里面的数据
@@ -65,11 +65,11 @@ static NSString* CellID = @"HomeCell";
 - (void)footer{
     //查找表
     BmobQuery  *bquery = [BmobQuery queryWithClassName:@"news"];
-    bquery.limit = 10;
-    [bquery orderByAscending:@"updatedAt"];
+    bquery.limit = 5;
+    [bquery orderByDescending:@"updatedAt"];
     if (self.datas.count > 0) {
         NewsObj *obj = self.datas.lastObject;
-        [bquery whereKey:@"updatedAt" lessThan:obj.updatedAt];//age小于18
+        [bquery whereKey:@"updatedAt" lessThan:obj.updatedAt];//
     }
     
     //查找GameScore表里面的数据
