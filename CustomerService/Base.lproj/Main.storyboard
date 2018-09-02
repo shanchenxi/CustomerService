@@ -51,7 +51,7 @@
         <scene sceneID="xqO-5N-C31">
             <objects>
                 <navigationController id="8UM-uw-rUh" customClass="HJNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="首页" id="gHX-yb-Xt3"/>
+                    <tabBarItem key="tabBarItem" title="首页" image="user" id="gHX-yb-Xt3"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bXP-Zp-Gao">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -126,7 +126,7 @@
         <scene sceneID="CZD-Hw-d5e">
             <objects>
                 <navigationController id="61X-uf-KdX" customClass="HJNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="设置" id="Q5k-d2-56q"/>
+                    <tabBarItem key="tabBarItem" title="设置" image="hammer" id="Q5k-d2-56q"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9WP-HD-y6w">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -143,7 +143,7 @@
         <scene sceneID="C6n-f8-9Pe">
             <objects>
                 <navigationController id="8MN-fP-XZz" customClass="HJNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="客服" id="80B-tv-akM"/>
+                    <tabBarItem key="tabBarItem" title="客服" image="message" id="80B-tv-akM"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5d8-FQ-eff">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -157,4 +157,9 @@
             <point key="canvasLocation" x="-1161" y="198"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="hammer" width="27" height="24"/>
+        <image name="message" width="24" height="24"/>
+        <image name="user" width="24" height="24"/>
+    </resources>
 </document>
