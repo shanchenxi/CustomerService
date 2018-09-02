@@ -44,13 +44,18 @@
                                     <constraint firstAttribute="width" constant="35" id="vQl-cl-Lcn"/>
                                 </constraints>
                             </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="x7z-E8-FH3">
+                                <rect key="frame" x="171" y="17" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="V3V-Q4-DHC" firstAttribute="top" secondItem="IAL-gG-iCQ" secondAttribute="top" constant="16" id="2TD-XU-lgK"/>
+                            <constraint firstItem="WdB-pr-Lom" firstAttribute="leading" secondItem="x7z-E8-FH3" secondAttribute="trailing" constant="8" id="6Pe-Pe-oRt"/>
                             <constraint firstItem="sNM-AN-TyL" firstAttribute="leading" secondItem="V3V-Q4-DHC" secondAttribute="trailing" constant="16" id="8Zt-ir-E76"/>
                             <constraint firstItem="V3V-Q4-DHC" firstAttribute="leading" secondItem="WdB-pr-Lom" secondAttribute="leading" constant="8" id="FAS-Wc-dXm"/>
                             <constraint firstItem="sNM-AN-TyL" firstAttribute="top" secondItem="IAL-gG-iCQ" secondAttribute="top" constant="8" id="HPP-3Z-eLr"/>
+                            <constraint firstItem="x7z-E8-FH3" firstAttribute="centerY" secondItem="V3V-Q4-DHC" secondAttribute="centerY" id="LKD-iq-XwF"/>
                             <constraint firstItem="V3V-Q4-DHC" firstAttribute="width" secondItem="WdB-pr-Lom" secondAttribute="width" constant="-16" id="Y3W-ht-3MX"/>
                             <constraint firstItem="WdB-pr-Lom" firstAttribute="top" secondItem="V3V-Q4-DHC" secondAttribute="top" constant="-8" id="dV8-Qf-WCm"/>
                             <constraint firstItem="V3V-Q4-DHC" firstAttribute="height" secondItem="WdB-pr-Lom" secondAttribute="height" constant="-16" id="hQe-65-AtS"/>
@@ -68,6 +73,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
+                <outlet property="aiView" destination="x7z-E8-FH3" id="LVJ-j0-snE"/>
                 <outlet property="bgImgView" destination="WdB-pr-Lom" id="50T-H2-w5t"/>
                 <outlet property="headImgView" destination="sNM-AN-TyL" id="uR3-al-bHD"/>
                 <outlet property="textLab" destination="V3V-Q4-DHC" id="TPm-O7-ypY"/>

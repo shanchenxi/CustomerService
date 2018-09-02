@@ -9,7 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @interface MsgObj : NSObject
-@property (strong, nonatomic) NSString *uid;
+@property (strong, nonatomic) NSString *role;
 @property (strong, nonatomic) NSString *text;
+@property (strong, nonatomic) NSString *img_url;
+@property (strong, nonatomic) NSString *app_store_url;
+@property (strong, nonatomic) NSString *h5_url;
+@property (assign, nonatomic) BOOL isSend;
 
 @end

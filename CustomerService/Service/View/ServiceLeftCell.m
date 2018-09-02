@@ -7,6 +7,8 @@
 //
 
 #import "ServiceLeftCell.h"
+#import "MsgObj.h"
+
 @interface ServiceLeftCell ()
 
 @property (weak, nonatomic) IBOutlet UILabel *textLab;
@@ -32,6 +34,7 @@
 }
 - (void)setObj:(id)obj{
     [super setObj:obj];
-    self.textLab.text = obj;
+    MsgObj *mObj = obj;
+    self.textLab.text = mObj.text;
 }
 @end

@@ -7,11 +7,14 @@
 //
 
 #import "ServiceRightCell.h"
+#import "MsgObj.h"
+
 @interface ServiceRightCell ()
 @property (weak, nonatomic) IBOutlet UILabel *textLab;
 @property (weak, nonatomic) IBOutlet UIImageView *bgImgView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *textLayoutW;
 @property (weak, nonatomic) IBOutlet UIImageView *headImgView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *aiView;
 
 @end
 @implementation ServiceRightCell
@@ -31,6 +34,14 @@
 }
 - (void)setObj:(id)obj{
     [super setObj:obj];
-    self.textLab.text = obj;
+    MsgObj *mObj = obj;
+    self.textLab.text = mObj.text;
+    
+    if (mObj.isSend) {
+        [self.aiView stopAnimating];
+    }else{
+        [self.aiView startAnimating];
+
+    }
 }
 @end
