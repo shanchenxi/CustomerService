@@ -32,9 +32,9 @@ static NSString *KeCellID = @"ServiceKeCell";
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
 #if DEBUG
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"模拟" style:0 target:self action:@selector(heSendMsg)];
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"模拟" style:0 target:self action:@selector(heSendMsg)];
 #endif
-    
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 10.f, 0);
     [self.tableView registerNib:[UINib nibWithNibName:LeftCellID bundle:nil] forCellReuseIdentifier:LeftCellID];
     [self.tableView registerNib:[UINib nibWithNibName:RightCellID bundle:nil] forCellReuseIdentifier:RightCellID];
     [self.tableView registerNib:[UINib nibWithNibName:KeCellID bundle:nil] forCellReuseIdentifier:KeCellID];
@@ -42,31 +42,7 @@ static NSString *KeCellID = @"ServiceKeCell";
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
     
-    //查找表
-    BmobQuery   *bquery = [BmobQuery queryWithClassName:@"ServiceMsg"];
-    //    bquery.limit = 10;
-    [bquery orderByAscending:@"updatedAt"];
-    //查找GameScore表里面的数据
-    [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
-        
-        if (error){
-            //进行错误处理
-        }else{
-            
-            for (BmobObject* bmob in array) {
-                MsgObj *obj = [[MsgObj alloc]init];
-                obj.role = [bmob objectForKey:@"role"];
-                obj.text = [bmob objectForKey:@"text"];
-                obj.app_store_url = [bmob objectForKey:@"app_store_url"];
-                obj.android_url = [bmob objectForKey:@"android_url"];
-                obj.h5_url = [bmob objectForKey:@"h5_url"];
-                obj.isSend = YES;
-                [self.datas addObject:obj];
-            }
-            [self.tableView reloadData];
-            [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.datas.count-1    inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:NO];
-        }
-    }];
+  
     
 }
 - (void)viewDidAppear:(BOOL)animated{
@@ -100,6 +76,40 @@ static NSString *KeCellID = @"ServiceKeCell";
         _datas = [NSMutableArray array];
     }
     return _datas;
+}
+- (IBAction)moreAction {
+    //查找表
+    BmobQuery   *bquery = [BmobQuery queryWithClassName:@"ServiceMsg"];
+    //    bquery.limit = 10;
+    [bquery orderByAscending:@"updatedAt"];
+    //查找GameScore表里面的数据
+    [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        
+        if (error){
+            //进行错误处理
+            [self.view showHUDWithTip:@"暂无更多"];
+
+        }else{
+            
+            if (array.count == 0) {
+                [self.view showHUDWithTip:@"暂无更多"];
+                return ;
+            }
+            
+            for (BmobObject* bmob in array) {
+                MsgObj *obj = [[MsgObj alloc]init];
+                obj.role = [bmob objectForKey:@"role"];
+                obj.text = [bmob objectForKey:@"text"];
+                obj.app_store_url = [bmob objectForKey:@"app_store_url"];
+                obj.android_url = [bmob objectForKey:@"android_url"];
+                obj.h5_url = [bmob objectForKey:@"h5_url"];
+                obj.isSend = YES;
+                [self.datas addObject:obj];
+            }
+            [self.tableView reloadData];
+            [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.datas.count-1    inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:NO];
+        }
+    }];
 }
 
 #pragma mark - Table view data source
