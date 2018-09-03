@@ -139,11 +139,11 @@
             </objects>
             <point key="canvasLocation" x="-1444" y="1150"/>
         </scene>
-        <!--客服-->
+        <!--消息-->
         <scene sceneID="C6n-f8-9Pe">
             <objects>
                 <navigationController id="8MN-fP-XZz" customClass="HJNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="客服" image="message" selectedImage="message_select" id="80B-tv-akM"/>
+                    <tabBarItem key="tabBarItem" title="消息" image="message" selectedImage="message_select" id="80B-tv-akM"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5d8-FQ-eff">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
