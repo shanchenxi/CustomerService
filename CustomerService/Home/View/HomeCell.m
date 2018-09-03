@@ -13,6 +13,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    self.imgView.contentMode =  UIViewContentModeScaleAspectFill;
 
 }
 
@@ -28,7 +29,7 @@
     self.subTitleLab.text = nObj.subtitle;
     NSString*urlStr = [nObj.imgs componentsSeparatedByString:@","][0];
     urlStr = [urlStr stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-
+    
     [self.imgView sd_setImageWithURL:[NSURL URLWithString:urlStr]];
 }
 @end

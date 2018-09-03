@@ -42,9 +42,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sUd-tJ-2iv">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="he" translatesAutoresizingMaskIntoConstraints="NO" id="sUd-tJ-2iv">
                                 <rect key="frame" x="8" y="8" width="35" height="35"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="BxK-lg-246"/>
                                     <constraint firstAttribute="width" constant="35" id="sZz-ZG-SD0"/>
@@ -59,7 +59,9 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8Z-Iu-2M2">
                                 <rect key="frame" x="137.5" y="38" width="62" height="30"/>
-                                <state key="normal" title="点击下载"/>
+                                <state key="normal" title="点击下载">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="androidAction" destination="KGk-i7-Jjw" eventType="touchUpInside" id="pbB-wa-2hv"/>
                                 </connections>
@@ -115,4 +117,7 @@
             <point key="canvasLocation" x="33" y="127.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="he" width="35" height="35"/>
+    </resources>
 </document>

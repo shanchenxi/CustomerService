@@ -36,9 +36,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sNM-AN-TyL">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="me" translatesAutoresizingMaskIntoConstraints="NO" id="sNM-AN-TyL">
                                 <rect key="frame" x="261" y="8" width="35" height="35"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="owg-8c-UZb"/>
                                     <constraint firstAttribute="width" constant="35" id="vQl-cl-Lcn"/>
@@ -82,4 +81,7 @@
             <point key="canvasLocation" x="25" y="71"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="me" width="35" height="35"/>
+    </resources>
 </document>
