@@ -201,7 +201,8 @@ static NSString *KeCellID = @"ServiceKeCell";
 
     }];
     [alert addAction:qqAction];
-    
+
+        
     UIAlertAction *baiduAction = [UIAlertAction actionWithTitle:@"复制链接" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         
         [UIPasteboard generalPasteboard].URL=[NSURL URLWithString:urlStr];
