@@ -204,7 +204,7 @@ static NSString *KeCellID = @"ServiceKeCell";
     
     UIAlertAction *baiduAction = [UIAlertAction actionWithTitle:@"复制链接" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         
-        [UIPasteboard generalPasteboard].string=urlStr;
+        [UIPasteboard generalPasteboard].URL=[NSURL URLWithString:urlStr];
         [self.view showHUDWithTip:@"链接已复制到剪贴板"];
 
 
