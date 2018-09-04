@@ -7,7 +7,14 @@
 //
 
 #import "HJKit.h"
+@protocol ServiceKeCellDelegate <NSObject>
+
+@required
+- (void)toURL:(UITableViewCell*)cell type:(NSInteger)type;
+@end
 
 @interface ServiceKeCell : HJTableViewCell
+@property (weak, nonatomic) id<ServiceKeCellDelegate> delegate;
 
 @end
+

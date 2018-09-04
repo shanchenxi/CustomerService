@@ -35,21 +35,17 @@
 
 }
 - (IBAction)iosAction {
-    MsgObj *mObj = self.obj;
-    if ([[UIApplication sharedApplication]canOpenURL:[NSURL URLWithString:mObj.app_store_url]]) {
-        [[UIApplication sharedApplication]openURL:[NSURL URLWithString:mObj.app_store_url]];
-    }
+    [self.delegate toURL:self type:1];
+    
 }
 - (IBAction)androidAction {
-    MsgObj *mObj = self.obj;
-    if ([[UIApplication sharedApplication]canOpenURL:[NSURL URLWithString:mObj.android_url]]) {
-        [[UIApplication sharedApplication]openURL:[NSURL URLWithString:mObj.android_url]];
-    }
+    [self.delegate toURL:self type:2];
+
+    
 }
 - (IBAction)h5Action {
-    MsgObj *mObj = self.obj;
-    if ([[UIApplication sharedApplication]canOpenURL:[NSURL URLWithString:mObj.h5_url]]) {
-        [[UIApplication sharedApplication]openURL:[NSURL URLWithString:mObj.h5_url]];
-    }
+    [self.delegate toURL:self type:3];
+
+    
 }
 @end

@@ -51,6 +51,7 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ela-Ip-Gek">
                                 <rect key="frame" x="131.5" y="10" width="62" height="30"/>
+                                <gestureRecognizers/>
                                 <state key="normal" title="点击下载"/>
                                 <connections>
                                     <action selector="iosAction" destination="KGk-i7-Jjw" eventType="touchUpInside" id="pIz-Ii-IYD"/>

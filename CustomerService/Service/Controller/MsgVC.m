@@ -10,12 +10,13 @@
 
 #import <BmobSDK/Bmob.h>
 #import "MsgObj.h"
+#import "ServiceKeCell.h"
 
 static NSString *LeftCellID = @"ServiceLeftCell";
 static NSString *RightCellID = @"ServiceRightCell";
 static NSString *KeCellID = @"ServiceKeCell";
 
-@interface MsgVC ()<UITableViewDelegate,UITableViewDataSource>
+@interface MsgVC ()<UITableViewDelegate,UITableViewDataSource,ServiceKeCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UITextField *msgTF;
 @property (strong, nonatomic) NSMutableArray *datas;
@@ -137,6 +138,9 @@ static NSString *KeCellID = @"ServiceKeCell";
     }
     
     HJTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID forIndexPath:indexPath];
+    if ([cell isKindOfClass:[ServiceKeCell class]]) {
+        ((ServiceKeCell*)cell).delegate = self;
+    }
     cell.obj= obj;
     
     return cell;
@@ -161,6 +165,67 @@ static NSString *KeCellID = @"ServiceKeCell";
     [self.msgTF resignFirstResponder];
 }
 
+#pragma mark - ServiceKeCellDelegate
+- (void)toURL:(UITableViewCell *)cell type:(NSInteger)type{
+   NSIndexPath*indexPath = [self.tableView indexPathForCell:cell];
+    MsgObj*obj =  self.datas[indexPath.row];
+    NSString *urlStr = nil;
+    if (type == 1) {
+        if ([[UIApplication sharedApplication]canOpenURL:[NSURL URLWithString:obj.app_store_url]]) {
+            [[UIApplication sharedApplication]openURL:[NSURL URLWithString:obj.app_store_url]];
+        }
+        return;
+    }else if (type == 2) {
+        urlStr = obj.android_url;
+    }else if (type == 3) {
+        urlStr = obj.h5_url;
+
+    }
+    
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"请选择浏览器打开" preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *safariAction = [UIAlertAction actionWithTitle:@"Safari" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self open:[NSString stringWithFormat:@"%@",urlStr]];
+    }];
+    [alert addAction:safariAction];
+    UIAlertAction *ucAction = [UIAlertAction actionWithTitle:@"UC" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        if (![self open:[NSString stringWithFormat:@"ucbrowser://%@",urlStr]]) {
+            [self.view showHUDWithTip:@"未检测到此浏览器"];
+
+        }
+
+    }];
+    [alert addAction:ucAction];
+    UIAlertAction *qqAction = [UIAlertAction actionWithTitle:@"QQ" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        if (![self open:[NSString stringWithFormat:@"mttbrowser://%@",urlStr]]) {
+            [self.view showHUDWithTip:@"未检测到此浏览器"];
+        }
+
+    }];
+    [alert addAction:qqAction];
+    
+    UIAlertAction *baiduAction = [UIAlertAction actionWithTitle:@"百度" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        if (![self open:[NSString stringWithFormat:@"baiduboxapp://%@",urlStr]]) {
+            if (![self open:[NSString stringWithFormat:@"BaiduSSO://%@",urlStr]]) {
+                [self.view showHUDWithTip:@"未检测到此浏览器"];
+            }
+        }
+
+    }];
+    [alert addAction:baiduAction];
+
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    
+    [alert addAction:cancelAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+- (BOOL)open:(NSString*)urlStr{
+    if ([[UIApplication sharedApplication]canOpenURL:[NSURL URLWithString:urlStr]]) {
+        [[UIApplication sharedApplication]openURL:[NSURL URLWithString:urlStr]];
+        return YES;
+    }
+    return NO;
+}
 #pragma mark - IBAction
 - (void)sendMsg:(MsgObj*)obj{
     
