@@ -202,17 +202,11 @@ static NSString *KeCellID = @"ServiceKeCell";
     }];
     [alert addAction:qqAction];
     
-    UIAlertAction *baiduAction = [UIAlertAction actionWithTitle:@"百度" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        if (![self open:[NSString stringWithFormat:@"baiduboxapp://url=%@",urlStr]]) {
-            if (![self open:[NSString stringWithFormat:@"BaiduSSO://url=%@",urlStr]]) {
-                if (![self open:[NSString stringWithFormat:@" bdNavi://url=%@",urlStr]]) {
-                    if (![self open:[NSString stringWithFormat:@" bdNavi://%@",urlStr]]) {
+    UIAlertAction *baiduAction = [UIAlertAction actionWithTitle:@"复制链接" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        [UIPasteboard generalPasteboard].string=urlStr;
+        [self.view showHUDWithTip:@"链接已复制到剪贴板"];
 
-                [self.view showHUDWithTip:@"未检测到此浏览器"];
-                    }
-            }
-            }
-        }
 
     }];
     [alert addAction:baiduAction];
