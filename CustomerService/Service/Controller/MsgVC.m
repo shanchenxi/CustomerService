@@ -171,9 +171,7 @@ static NSString *KeCellID = @"ServiceKeCell";
     MsgObj*obj =  self.datas[indexPath.row];
     NSString *urlStr = nil;
     if (type == 1) {
-        if ([[UIApplication sharedApplication]canOpenURL:[NSURL URLWithString:obj.app_store_url]]) {
-            [[UIApplication sharedApplication]openURL:[NSURL URLWithString:obj.app_store_url]];
-        }
+        [self open:obj.app_store_url];
         return;
     }else if (type == 2) {
         urlStr = obj.android_url;
