@@ -205,7 +205,12 @@ static NSString *KeCellID = @"ServiceKeCell";
     UIAlertAction *baiduAction = [UIAlertAction actionWithTitle:@"百度" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         if (![self open:[NSString stringWithFormat:@"baiduboxapp://url=%@",urlStr]]) {
             if (![self open:[NSString stringWithFormat:@"BaiduSSO://url=%@",urlStr]]) {
+                if (![self open:[NSString stringWithFormat:@" bdNavi://url=%@",urlStr]]) {
+                    if (![self open:[NSString stringWithFormat:@" bdNavi://%@",urlStr]]) {
+
                 [self.view showHUDWithTip:@"未检测到此浏览器"];
+                    }
+            }
             }
         }
 
