@@ -195,7 +195,7 @@ static NSString *KeCellID = @"ServiceKeCell";
     }];
     [alert addAction:ucAction];
     UIAlertAction *qqAction = [UIAlertAction actionWithTitle:@"QQ" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        if (![self open:[NSString stringWithFormat:@"mttbrowser://%@",urlStr]]) {
+        if (![self open:[NSString stringWithFormat:@"mttbrowser://url=%@",urlStr]]) {
             [self.view showHUDWithTip:@"未检测到此浏览器"];
         }
 
@@ -203,8 +203,8 @@ static NSString *KeCellID = @"ServiceKeCell";
     [alert addAction:qqAction];
     
     UIAlertAction *baiduAction = [UIAlertAction actionWithTitle:@"百度" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        if (![self open:[NSString stringWithFormat:@"baiduboxapp://%@",urlStr]]) {
-            if (![self open:[NSString stringWithFormat:@"BaiduSSO://%@",urlStr]]) {
+        if (![self open:[NSString stringWithFormat:@"baiduboxapp://url=%@",urlStr]]) {
+            if (![self open:[NSString stringWithFormat:@"BaiduSSO://url=%@",urlStr]]) {
                 [self.view showHUDWithTip:@"未检测到此浏览器"];
             }
         }
