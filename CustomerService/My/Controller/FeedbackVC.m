@@ -28,7 +28,7 @@
     textV.layer.cornerRadius = 5;
     textV.keyboardType = UIKeyboardTypeDefault;
     textV.delegate = self;
-    textV.placeholder = @"有什么要求尽管提...";
+    textV.placeholder = @"发表我的建议和留言...";
     self.textV = textV;
     textV.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:textV];

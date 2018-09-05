@@ -186,7 +186,7 @@ static NSString *KeCellID = @"ServiceKeCell";
         [self open:[NSString stringWithFormat:@"%@",urlStr]];
     }];
     [alert addAction:safariAction];
-    UIAlertAction *ucAction = [UIAlertAction actionWithTitle:@"UC" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction *ucAction = [UIAlertAction actionWithTitle:@"UC游览器" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         if (![self open:[NSString stringWithFormat:@"ucbrowser://%@",urlStr]]) {
             [self.view showHUDWithTip:@"未检测到此浏览器"];
 
@@ -194,7 +194,7 @@ static NSString *KeCellID = @"ServiceKeCell";
 
     }];
     [alert addAction:ucAction];
-    UIAlertAction *qqAction = [UIAlertAction actionWithTitle:@"QQ" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction *qqAction = [UIAlertAction actionWithTitle:@"QQ游览器" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         if (![self open:[NSString stringWithFormat:@"mttbrowser://url=%@",urlStr]]) {
             [self.view showHUDWithTip:@"未检测到此浏览器"];
         }
