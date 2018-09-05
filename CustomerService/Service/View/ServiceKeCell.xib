@@ -42,7 +42,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="he" translatesAutoresizingMaskIntoConstraints="NO" id="sUd-tJ-2iv">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="系统消息" translatesAutoresizingMaskIntoConstraints="NO" id="sUd-tJ-2iv">
                                 <rect key="frame" x="8" y="8" width="35" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="BxK-lg-246"/>
@@ -118,6 +118,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="he" width="35" height="35"/>
+        <image name="系统消息" width="35" height="35"/>
     </resources>
 </document>
