@@ -19,7 +19,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0.1</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>baiduboxapp</string>
@@ -34,7 +34,7 @@
 		<true/>
 	</dict>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string> 存照片</string>
+	<string>需要访问您的相册，以便正常使用图片上传，图片保存等服务</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>
