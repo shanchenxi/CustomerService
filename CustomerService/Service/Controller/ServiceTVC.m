@@ -23,7 +23,8 @@
     self.tableView.tableFooterView = [[UIView alloc] init];
     self.tableView.rowHeight = UITableViewAutomaticDimension;
 
-    
+//    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
+
     
     
     
@@ -85,9 +86,8 @@
     if (!cell) {
         cell = [[HJTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
     }
-    cell.imageView.image = [UIImage imageNamed:@"头像"];
-    cell.textLabel.text = @"客服人员1";
-    cell.detailTextLabel.text = self.lastText;
+    cell.textLabel.text = @"系统消息";
+    cell.detailTextLabel.text = self.lastText.length==0?@"暂无更多消息，点击进入获取更多消息":self.lastText;
     return cell;
 }
 

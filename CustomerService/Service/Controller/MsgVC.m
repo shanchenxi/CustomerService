@@ -43,7 +43,7 @@ static NSString *KeCellID = @"ServiceKeCell";
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
     
-  
+    [self moreAction];
     
 }
 - (void)viewDidAppear:(BOOL)animated{
@@ -147,21 +147,7 @@ static NSString *KeCellID = @"ServiceKeCell";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    MsgObj*obj =  self.datas[indexPath.row];
-    NSURL* app_store_url = [NSURL URLWithString:obj.app_store_url];
-    NSURL* android_url = [NSURL URLWithString:obj.android_url];
-    
-    NSURL* h5_url = [NSURL URLWithString:obj.h5_url];
-    
-    if ([[UIApplication sharedApplication]canOpenURL:app_store_url]) {
-        [[UIApplication sharedApplication]openURL:app_store_url];
-    }
-    if ([[UIApplication sharedApplication]canOpenURL:android_url]) {
-        [[UIApplication sharedApplication]openURL:android_url];
-    }
-    else if ([[UIApplication sharedApplication]canOpenURL:h5_url]) {
-        [[UIApplication sharedApplication]openURL:h5_url];
-    }
+
     [self.msgTF resignFirstResponder];
 }
 

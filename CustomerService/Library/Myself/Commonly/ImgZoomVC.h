@@ -27,7 +27,7 @@
 
 @required
 -(void)back;
-
+-(void)longPress:(UIImage *)image;
 @end
 
 @interface ImgZoomCell : UICollectionViewCell

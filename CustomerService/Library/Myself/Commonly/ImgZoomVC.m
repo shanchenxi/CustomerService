@@ -101,7 +101,29 @@ static NSString * const reuseIdentifier = @"ImgZoomVCCell";
 -(void)back{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+- (void)longPress:(UIImage *)image{
 
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *sureAction = [UIAlertAction actionWithTitle:@"保存到相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+
+    }];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    
+    [alert addAction:sureAction];
+    [alert addAction:cancelAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+#pragma  mark - 保存到相册触发事件
+
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
+{
+    
+    NSString *message = error == NULL?@"保存成功！" :@"保存失败！";
+    [self.view showHUDWithTip:message];
+    
+}
 @end
 
 #pragma mark - 类ImgZoomCell
@@ -147,6 +169,8 @@ static NSString * const reuseIdentifier = @"ImgZoomVCCell";
         twoTap.numberOfTapsRequired = 2;
         [imageView addGestureRecognizer:twoTap];
         
+        UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(longPress:)];
+        [imageView addGestureRecognizer:longPress];
         //如果不加下面的话，当单指双击时，会先调用单指单击中的处理，再调用单指双击中的处理
         [oneTap requireGestureRecognizerToFail:twoTap];
         
@@ -180,6 +204,13 @@ static NSString * const reuseIdentifier = @"ImgZoomVCCell";
             break;
     }
 }
+-(void)longPress:(UILongPressGestureRecognizer*)longPress{
+    if (self.imgView.image) {
+        [self.delegate longPress:self.imgView.image];
+    }
+   
+}
+
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidZoom:(UIScrollView *)scrollView{
     CGFloat xcenter = scrollView.center.x , ycenter = scrollView.center.y;

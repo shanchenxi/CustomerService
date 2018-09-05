@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationBar.translucent = NO;
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,7 +30,10 @@
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
     if (self.viewControllers.count > 0) {
         viewController.hidesBottomBarWhenPushed = YES;
+        self.viewControllers.firstObject.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
+
     }
+
     [super pushViewController:viewController animated:YES];
 }
 

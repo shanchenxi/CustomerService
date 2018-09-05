@@ -116,6 +116,12 @@
    
 }
 
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSMutableArray *arr = [NSMutableArray array];
+    for (NSString*str in self.datas) {
+        [arr addObject:[NSURL URLWithString:str]];
+    }
+    ImgZoomVCShow(arr, indexPath.row-1);
+}
 
 @end

@@ -23,12 +23,11 @@
     if (self.title.length == 0) {
         self.title = self.param[@"title"];
     }
-    
+
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)back {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 - (BOOL)shouldAutorotate{
     return NO;
