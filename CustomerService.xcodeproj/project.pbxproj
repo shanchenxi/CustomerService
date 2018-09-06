@@ -1527,6 +1527,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/CustomerService/Library/Master/Push",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.whirlie.CustomerService.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "53957e63-8433-4128-a549-0e54c89d7e44";
@@ -1557,6 +1558,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/CustomerService/Library/Master/Push",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.whirlie.CustomerService.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "53957e63-8433-4128-a549-0e54c89d7e44";

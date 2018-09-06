@@ -15,7 +15,7 @@
 @end
 
 @implementation XGPushDelegate
-#ifdef __IOS_AVAILABLE(10.0)
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
 - (void)xgPushUserNotificationCenter:(UNUserNotificationCenter *)center
       didReceiveNotificationResponse:(UNNotificationResponse *)response
                withCompletionHandler:(void(^)(void))completionHandler {
@@ -36,6 +36,27 @@
 }
 #endif
 
+/**
+ @brief 监控信鸽推送服务地启动情况
+ 
+ @param isSuccess 信鸽推送是否启动成功
+ @param error 信鸽推送启动错误的信息
+ */
+- (void)xgPushDidFinishStart:(BOOL)isSuccess error:(nullable NSError *)error{
+    
+}
+
+/**
+ @brief 向信鸽服务器注册设备token的回调
+ 
+ @param deviceToken 当前设备的token
+ @param error 错误信息
+ @note 当前的token已经注册过之后，将不会再调用此方法
+ */
+- (void)xgPushDidRegisteredDeviceToken:(nullable NSString *)deviceToken error:(nullable NSError *)error{
+    NSLog(@"--%@",deviceToken);
+
+}
 @end
 
 @interface AppDelegate ()
@@ -46,17 +67,28 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-//    [[XGPush defaultManager] reportXGNotificationInfo:launchOptions];
-//    [[XGPush defaultManager] startXGWithAppID:2200262432 appKey:@"I89WTUY132GJ"
-//                                     delegate:[[XGPushDelegate alloc]init]];
+    
+    [[XGPush defaultManager] startXGWithAppID:2200310128 appKey:@"IU39J35CU5PU" delegate:[[XGPushDelegate alloc]init]];
+
+    [[XGPush defaultManager] reportXGNotificationInfo:launchOptions];
+    [[XGPush defaultManager] setEnableDebug:YES];
+
     //BMOB
     [Bmob registerWithAppKey:@"781b49b3232cb155d1bbfa0e500be14e"];
     
+    
+    NSLog(@"%@",[[XGPush defaultManager]sdkVersion]);
+
     return YES;
 }
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
+    NSLog(@"%@",[[NSString alloc]initWithData:deviceToken encoding:NSUTF8StringEncoding]);
+    
+}
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(nonnull void (^)(UIBackgroundFetchResult))completionHandler{
+    [[XGPush defaultManager] reportXGNotificationInfo:userInfo ];
+    completionHandler(UIBackgroundFetchResultNewData);
 
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-    [[XGPush defaultManager] reportXGNotificationInfo:userInfo];
 }
 - (void)applicationDidBecomeActive:(UIApplication *)application{
     [Bmob activateSDK];
