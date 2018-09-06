@@ -11,6 +11,7 @@
 #import <BmobSDK/Bmob.h>
 #import "MsgObj.h"
 #import "ServiceKeCell.h"
+#import "CacheTool.h"
 
 static NSString *LeftCellID = @"ServiceLeftCell";
 static NSString *RightCellID = @"ServiceRightCell";
@@ -32,9 +33,9 @@ static NSString *KeCellID = @"ServiceKeCell";
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-#if DEBUG
-//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"模拟" style:0 target:self action:@selector(heSendMsg)];
-#endif
+
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"more"] style:0 target:self action:@selector(moreMenuAction)];
+
     self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 10.f, 0);
     [self.tableView registerNib:[UINib nibWithNibName:LeftCellID bundle:nil] forCellReuseIdentifier:LeftCellID];
     [self.tableView registerNib:[UINib nibWithNibName:RightCellID bundle:nil] forCellReuseIdentifier:RightCellID];
@@ -43,9 +44,12 @@ static NSString *KeCellID = @"ServiceKeCell";
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
     
-    [self moreAction];
+    self.datas = [CacheTool obtainBMKPoiInfos];
     
+//    NSString *uuid = [[NSUUID UUID] UUIDString];
+
 }
+
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     //    [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:self.datas.count-1    inSection:0] animated:NO scrollPosition:UITableViewScrollPositionMiddle];
@@ -79,6 +83,7 @@ static NSString *KeCellID = @"ServiceKeCell";
     return _datas;
 }
 - (IBAction)moreAction {
+    
     //查找表
     BmobQuery   *bquery = [BmobQuery queryWithClassName:@"ServiceMsg"];
     //    bquery.limit = 10;
@@ -104,15 +109,29 @@ static NSString *KeCellID = @"ServiceKeCell";
                 obj.app_store_url = [bmob objectForKey:@"app_store_url"];
                 obj.android_url = [bmob objectForKey:@"android_url"];
                 obj.h5_url = [bmob objectForKey:@"h5_url"];
+                obj.time = [bmob objectForKey:@"updatedAt"];
                 obj.isSend = YES;
                 [self.datas addObject:obj];
+                [CacheTool addBMKPoiInfo:obj];
             }
             [self.tableView reloadData];
             [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.datas.count-1    inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:NO];
         }
     }];
 }
-
+- (void)moreMenuAction{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *sureAction = [UIAlertAction actionWithTitle:@"清空消息" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self.datas removeAllObjects];
+        [CacheTool deleteBMKPoiInfo];
+        [self.tableView reloadData];
+    }];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    
+    [alert addAction:sureAction];
+    [alert addAction:cancelAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
 #pragma mark - Table view data source
 
 
@@ -216,21 +235,12 @@ static NSString *KeCellID = @"ServiceKeCell";
     obj.isSend = NO;
     [self.datas addObject:obj];
     
-    //往表添加一条数据
-    BmobObject *gameScore = [BmobObject objectWithClassName:@"ServiceMsg"];
-    [gameScore setObject:obj.role forKey:@"role"];
-    [gameScore setObject:obj.text forKey:@"text"];
-    [gameScore setObject:obj.app_store_url forKey:@"app_store_url"];
-    [gameScore setObject:obj.android_url forKey:@"android_url"];
-    [gameScore setObject:obj.h5_url forKey:@"h5_url"];
+    [CacheTool addBMKPoiInfo:obj];
     
-    [gameScore saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
-        //进行操作
-        obj.isSend = YES;
-        [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:self.datas.count-1    inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+    obj.isSend = YES;
+//    [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:self.datas.count-1    inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+    
         
-        
-    }];
     
     
     [self.tableView beginUpdates];
@@ -253,24 +263,14 @@ static NSString *KeCellID = @"ServiceKeCell";
     
     obj.role = @"me";
     obj.text = self.msgTF.text;
-    
+    obj.app_store_url = @" ";
+    obj.h5_url = @" ";
+    obj.android_url = @" ";
+    obj.time = [[NSDate date] stringYMD_HMS];
+
     [self sendMsg:obj];
     
     self.msgTF.text = @"";
 }
 
-- (void)heSendMsg{
-    
-    MsgObj*obj =  [[MsgObj alloc]init];
-    
-    obj.role = @"he";
-    obj.text = [self rondomStr:arc4random()%100+1];
-    obj.app_store_url = @"https://itunes.apple.com/cn/app/%E5%BE%AE%E4%BF%A1/id414478124?mt=8";
-    obj.h5_url = @"https://baidu.com";
-    obj.android_url = @"https://google.com";
-    
-    [self sendMsg:obj];
-    
-    
-}
 @end

@@ -70,6 +70,38 @@
     //转化为大写拼音
     return [str capitalizedString];
 }
+
+-(NSString *)timeMsg{
+    
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    if ([NSString judgeString:self].length == 0) {//如果字符串为空  则返回当前时间
+        return @"";
+    }
+    NSDate *date = [df dateFromString: [NSString judgeString:self]];
+    CGFloat second = [date  timeIntervalSince1970];
+    CGFloat cha = [[NSDate date]  timeIntervalSince1970] - second;
+    if (cha < 60) {
+        return  @"刚刚";
+    }
+    if (cha > 60 && cha < 60*60*24) {
+        [df setDateFormat:@"HH:mm"];
+        
+        return  [df stringFromDate:date];
+    }
+    if (cha > 60*60*24 && cha < 60*60*24*365) {
+        [df setDateFormat:@"MM-dd HH:mm"];
+        
+        return  [df stringFromDate:date];
+    }
+    if (cha > 60*60*24*365) {
+        [df setDateFormat:@"yyyy-MM-dd HH:mm"];
+        
+        return  [df stringFromDate:date];
+    }
+    
+    return nil;
+}
 -(NSDate *)dateAll{
   
     NSDateFormatter *df = [[NSDateFormatter alloc] init];

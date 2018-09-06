@@ -64,10 +64,10 @@
             </objects>
             <point key="canvasLocation" x="-1179" y="-475"/>
         </scene>
-        <!--客服-->
+        <!--消息-->
         <scene sceneID="jE5-KR-if2">
             <objects>
-                <tableViewController id="FVD-uV-m13" customClass="ServiceTVC" sceneMemberID="viewController">
+                <tableViewController title="消息" id="FVD-uV-m13" customClass="ServiceTVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="asW-gK-k6I">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -87,7 +87,7 @@
                             <outlet property="delegate" destination="FVD-uV-m13" id="Sph-2f-l7c"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="客服" id="soU-OH-bSi"/>
+                    <navigationItem key="navigationItem" title="消息" id="soU-OH-bSi"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C6V-Di-4jS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -162,7 +162,7 @@
         <image name="home_ select" width="25" height="25"/>
         <image name="message" width="25" height="25"/>
         <image name="message_select" width="25" height="25"/>
-        <image name="setting" width="25" height="25"/>
-        <image name="setting_select" width="25" height="25"/>
+        <image name="setting" width="26" height="25"/>
+        <image name="setting_select" width="26" height="25"/>
     </resources>
 </document>

@@ -8,6 +8,7 @@
 
 #import "ServiceTVC.h"
 #import <BmobSDK/Bmob.h>
+#import "CacheTool.h"
 
 
 
@@ -24,34 +25,17 @@
     self.tableView.rowHeight = UITableViewAutomaticDimension;
 
 //    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
-
-    
-    
-    
-    //查找表
-    BmobQuery   *bquery = [BmobQuery queryWithClassName:@"ServiceMsg"];
-    bquery.limit = 1;
-    [bquery orderByDescending:@"updatedAt"];
-    //查找GameScore表里面id为0c6db13c的数据
-    [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
-        
-        if (error){
-            //进行错误处理
-        }else{
-            //表里有id为0c6db13c的数据
-            if (array.firstObject) {
-                //得到playerName和cheatMode
-                self.lastText = [array.firstObject objectForKey:@"text"];
-                [self.tableView reloadData];
-            }
-        }
-    }];
-
    
     
     
 }
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    self.lastText = [CacheTool obtainBMKPoiInfosLast].text;
+    [self.tableView reloadData];
 
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -86,6 +70,7 @@
     if (!cell) {
         cell = [[HJTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
     }
+    cell.imageView.image= [UIImage imageNamed:@"messagesys"];
     cell.textLabel.text = @"系统消息";
     cell.detailTextLabel.text = self.lastText.length==0?@"暂无更多消息，点击进入获取更多消息":self.lastText;
     return cell;

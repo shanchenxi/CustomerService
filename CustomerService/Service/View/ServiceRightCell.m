@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *textLayoutW;
 @property (weak, nonatomic) IBOutlet UIImageView *headImgView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *aiView;
+@property (weak, nonatomic) IBOutlet UILabel *timeLab;
 
 @end
 @implementation ServiceRightCell
@@ -36,7 +37,7 @@
     [super setObj:obj];
     MsgObj *mObj = obj;
     self.textLab.text = mObj.text;
-    
+    self.timeLab.text = [mObj.time timeMsg];
     if (mObj.isSend) {
         [self.aiView stopAnimating];
     }else{

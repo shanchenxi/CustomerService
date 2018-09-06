@@ -23,6 +23,7 @@
 ///中文转拼音
 - (NSString*)chineseChangePinyin;
 ///字符串转时间
+- (NSString *)timeMsg;
 - (NSDate *)dateAll;
 - (NSDate *)dateHm;
 ///字符串16进制色值转UIColor

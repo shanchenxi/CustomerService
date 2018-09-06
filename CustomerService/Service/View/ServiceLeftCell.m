@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *bgImgView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *textLayoutW;
 @property (weak, nonatomic) IBOutlet UIImageView *headImgView;
+@property (weak, nonatomic) IBOutlet UILabel *timeLab;
 
 @end
 @implementation ServiceLeftCell
@@ -36,5 +37,7 @@
     [super setObj:obj];
     MsgObj *mObj = obj;
     self.textLab.text = mObj.text;
+    self.timeLab.text = [mObj.time timeMsg];
+
 }
 @end

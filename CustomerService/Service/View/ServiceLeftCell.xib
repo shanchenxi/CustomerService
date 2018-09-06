@@ -43,9 +43,17 @@
                                     <constraint firstAttribute="height" constant="35" id="wqx-vu-Ih2"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53J-jE-Vdl">
+                                <rect key="frame" x="112.5" y="17.5" width="37" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="53J-jE-Vdl" firstAttribute="leading" secondItem="wXH-Mu-FOI" secondAttribute="trailing" constant="8" id="1Zl-EQ-kRG"/>
+                            <constraint firstItem="53J-jE-Vdl" firstAttribute="centerY" secondItem="jQ9-vB-tN4" secondAttribute="centerY" id="872-bk-9Fg"/>
                             <constraint firstItem="wXH-Mu-FOI" firstAttribute="top" secondItem="k4o-EA-cbG" secondAttribute="top" constant="-8" id="Dys-J9-1bZ"/>
                             <constraint firstItem="k4o-EA-cbG" firstAttribute="width" secondItem="wXH-Mu-FOI" secondAttribute="width" constant="-16" id="Hlf-Kh-pdb"/>
                             <constraint firstItem="k4o-EA-cbG" firstAttribute="leading" secondItem="wXH-Mu-FOI" secondAttribute="leading" constant="8" id="cnb-GI-YH3"/>
@@ -71,6 +79,7 @@
                 <outlet property="headImgView" destination="jQ9-vB-tN4" id="9Ke-LC-63n"/>
                 <outlet property="textLab" destination="k4o-EA-cbG" id="fu5-8R-9D8"/>
                 <outlet property="textLayoutW" destination="Vc9-k2-acp" id="41J-VQ-TD8"/>
+                <outlet property="timeLab" destination="53J-jE-Vdl" id="dsT-e7-Y0l"/>
             </connections>
             <point key="canvasLocation" x="25" y="66.5"/>
         </tableViewCell>

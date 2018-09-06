@@ -13,6 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *bgImgView;
 @property (weak, nonatomic) IBOutlet UIImageView *headImgView;
+@property (weak, nonatomic) IBOutlet UILabel *timeLab;
 
 @end
 @implementation ServiceKeCell
@@ -32,6 +33,8 @@
 }
 - (void)setObj:(id)obj{
     [super setObj:obj];
+    MsgObj *mObj = obj;
+    self.timeLab.text = [mObj.time timeMsg];
 
 }
 - (IBAction)iosAction {

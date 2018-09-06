@@ -44,18 +44,26 @@
                                 </constraints>
                             </imageView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="x7z-E8-FH3">
-                                <rect key="frame" x="171" y="17" width="20" height="20"/>
+                                <rect key="frame" x="129" y="17" width="20" height="20"/>
                             </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVk-XQ-RXd">
+                                <rect key="frame" x="154" y="17.5" width="37" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="V3V-Q4-DHC" firstAttribute="top" secondItem="IAL-gG-iCQ" secondAttribute="top" constant="16" id="2TD-XU-lgK"/>
-                            <constraint firstItem="WdB-pr-Lom" firstAttribute="leading" secondItem="x7z-E8-FH3" secondAttribute="trailing" constant="8" id="6Pe-Pe-oRt"/>
                             <constraint firstItem="sNM-AN-TyL" firstAttribute="leading" secondItem="V3V-Q4-DHC" secondAttribute="trailing" constant="16" id="8Zt-ir-E76"/>
                             <constraint firstItem="V3V-Q4-DHC" firstAttribute="leading" secondItem="WdB-pr-Lom" secondAttribute="leading" constant="8" id="FAS-Wc-dXm"/>
                             <constraint firstItem="sNM-AN-TyL" firstAttribute="top" secondItem="IAL-gG-iCQ" secondAttribute="top" constant="8" id="HPP-3Z-eLr"/>
+                            <constraint firstItem="pVk-XQ-RXd" firstAttribute="centerY" secondItem="sNM-AN-TyL" secondAttribute="centerY" id="IoH-an-mpu"/>
                             <constraint firstItem="x7z-E8-FH3" firstAttribute="centerY" secondItem="V3V-Q4-DHC" secondAttribute="centerY" id="LKD-iq-XwF"/>
                             <constraint firstItem="V3V-Q4-DHC" firstAttribute="width" secondItem="WdB-pr-Lom" secondAttribute="width" constant="-16" id="Y3W-ht-3MX"/>
+                            <constraint firstItem="WdB-pr-Lom" firstAttribute="leading" secondItem="pVk-XQ-RXd" secondAttribute="trailing" constant="8" id="afY-gM-bVB"/>
+                            <constraint firstItem="pVk-XQ-RXd" firstAttribute="leading" secondItem="x7z-E8-FH3" secondAttribute="trailing" constant="5" id="c8F-iw-kEs"/>
                             <constraint firstItem="WdB-pr-Lom" firstAttribute="top" secondItem="V3V-Q4-DHC" secondAttribute="top" constant="-8" id="dV8-Qf-WCm"/>
                             <constraint firstItem="V3V-Q4-DHC" firstAttribute="height" secondItem="WdB-pr-Lom" secondAttribute="height" constant="-16" id="hQe-65-AtS"/>
                             <constraint firstAttribute="trailing" secondItem="sNM-AN-TyL" secondAttribute="trailing" constant="8" id="joA-OK-0aX"/>
@@ -77,6 +85,7 @@
                 <outlet property="headImgView" destination="sNM-AN-TyL" id="uR3-al-bHD"/>
                 <outlet property="textLab" destination="V3V-Q4-DHC" id="TPm-O7-ypY"/>
                 <outlet property="textLayoutW" destination="CRl-mC-TzA" id="ZLR-q1-jhP"/>
+                <outlet property="timeLab" destination="pVk-XQ-RXd" id="dUZ-qP-QIt"/>
             </connections>
             <point key="canvasLocation" x="25" y="71"/>
         </tableViewCell>
