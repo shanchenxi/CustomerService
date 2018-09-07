@@ -9,30 +9,32 @@
 #import "AppDelegate.h"
 #import "XGPush.h"
 #import <BmobSDK/Bmob.h>
-
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
+#import <UserNotifications/UserNotifications.h>
+#endif
 @interface XGPushDelegate : NSObject<XGPushDelegate>
 
 @end
 
 @implementation XGPushDelegate
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
-- (void)xgPushUserNotificationCenter:(UNUserNotificationCenter *)center
-      didReceiveNotificationResponse:(UNNotificationResponse *)response
-               withCompletionHandler:(void(^)(void))completionHandler {
-    [[XGPush defaultManager]
-     reportXGNotificationInfo:response.notification.request.content.userInfo
-     ];
+- (void)xgPushUserNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
+    NSLog(@"[XGDemo] click notification");
+    if ([response.actionIdentifier isEqualToString:@"xgaction001"]) {
+        NSLog(@"click from Action1");
+    } else if ([response.actionIdentifier isEqualToString:@"xgaction002"]) {
+        NSLog(@"click from Action2");
+    }
+    
+    [[XGPush defaultManager] reportXGNotificationResponse:response];
+    
     completionHandler();
 }
-- (void)xgPushUserNotificationCenter:(UNUserNotificationCenter *)center
-             willPresentNotification:(UNNotification *)notification
-               withCompletionHandler:(void (^)
-                                      (UNNotificationPresentationOptions))completionHandler {
-    [[XGPush defaultManager]
-     reportXGNotificationInfo:notification.request.content.userInfo];
-    completionHandler(UNNotificationPresentationOptionBadge |
-                      UNNotificationPresentationOptionSound |
-                      UNNotificationPresentationOptionAlert);
+
+// App 在前台弹通知需要调用这个接口
+- (void)xgPushUserNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
+    [[XGPush defaultManager] reportXGNotificationInfo:notification.request.content.userInfo];
+    completionHandler(UNNotificationPresentationOptionBadge | UNNotificationPresentationOptionSound | UNNotificationPresentationOptionAlert);
 }
 #endif
 
@@ -85,9 +87,14 @@
     NSLog(@"%@",[[NSString alloc]initWithData:deviceToken encoding:NSUTF8StringEncoding]);
     
 }
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(nonnull void (^)(UIBackgroundFetchResult))completionHandler{
-    [[XGPush defaultManager] reportXGNotificationInfo:userInfo ];
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+    NSLog(@"[XGDemo] receive slient Notification");
+    NSLog(@"[XGDemo] userinfo %@", userInfo);
+    [[XGPush defaultManager] reportXGNotificationInfo:userInfo];
     completionHandler(UIBackgroundFetchResultNewData);
+}
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    NSLog(@"[XGDemo] register APNS fail.\n[XGDemo] reason : %@", error);
 
 }
 - (void)applicationDidBecomeActive:(UIApplication *)application{
