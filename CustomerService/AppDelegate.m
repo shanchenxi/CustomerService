@@ -73,7 +73,8 @@
     [[XGPush defaultManager] startXGWithAppID:2200310128 appKey:@"IU39J35CU5PU" delegate:[[XGPushDelegate alloc]init]];
 
     [[XGPush defaultManager] reportXGNotificationInfo:launchOptions];
-    [[XGPush defaultManager] setEnableDebug:YES];
+    [[XGPush defaultManager] setEnableDebug:NO];
+    [[XGPush defaultManager] setXgApplicationBadgeNumber:0];
 
     //BMOB
     [Bmob registerWithAppKey:@"781b49b3232cb155d1bbfa0e500be14e"];
