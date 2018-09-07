@@ -52,7 +52,7 @@ static NSString *KeCellID = @"ServiceKeCell";
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    //    [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:self.datas.count-1    inSection:0] animated:NO scrollPosition:UITableViewScrollPositionMiddle];
+        [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:self.datas.count-1    inSection:0] animated:NO scrollPosition:UITableViewScrollPositionMiddle];
     
     
 }
@@ -109,7 +109,7 @@ static NSString *KeCellID = @"ServiceKeCell";
                 obj.app_store_url = [bmob objectForKey:@"app_store_url"];
                 obj.android_url = [bmob objectForKey:@"android_url"];
                 obj.h5_url = [bmob objectForKey:@"h5_url"];
-                obj.time = [bmob objectForKey:@"updatedAt"];
+                obj.time = [[NSDate date] stringYMD_HMS];
                 obj.isSend = YES;
                 [self.datas addObject:obj];
                 [CacheTool addBMKPoiInfo:obj];
@@ -239,9 +239,7 @@ static NSString *KeCellID = @"ServiceKeCell";
     
     obj.isSend = YES;
 //    [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:self.datas.count-1    inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
-    
         
-    
     
     [self.tableView beginUpdates];
     
@@ -257,6 +255,7 @@ static NSString *KeCellID = @"ServiceKeCell";
     
     if (self.msgTF.text.length == 0) {
         [self.view showHUDWithTip:@"请输入内容"];
+        return;
     }
     
     MsgObj*obj =  [[MsgObj alloc]init];
