@@ -1,0 +1,26 @@
+/* 
+  Localizable.strings
+  CustomerService
+
+  Created by 吴宏佳 on 2018/9/10.
+  Copyright © 2018年 吴宏佳. All rights reserved.
+*/
+//更换主题
+ReplaceTopic = "Changer le thème";
+//建议与留言
+Suggestions = "CSuggestions et de message";
+//分享给朋友
+Share = "Partager avec ses amis";
+//清除缓存
+ClearCache = "Nettoyer le cache";
+//关于我们
+About = "Sur nous";
+//返回
+Back = "De retour";
+//发表
+Fabiao = "A publié des recommandations et mon message ...";
+//确定
+Sure = "Déterminer";
+//反馈成功
+FeedbackSuccess = "Le succès de rétroaction";
+
