@@ -20,14 +20,14 @@
 @implementation aboutUsVC
 
 -(void)viewWillAppear:(BOOL)animated{
-    self.navigationItem.title = @"关于我们";
+    self.navigationItem.title = NSLocalizedString(@"About", nil);
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = RGB(245, 245, 245);
 
     self.logoImg = [[UIImageView alloc] init];
-    self.logoImg.image = [UIImage imageNamed:@"account_tu1"];
+    self.logoImg.image = [UIImage imageNamed:@"AppIcon"];
     [self.view addSubview:self.logoImg];
     [_logoImg makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(78.f);

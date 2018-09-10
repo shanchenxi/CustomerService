@@ -23,8 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"设置";
-    self.view.backgroundColor = [UIColor lightGrayColor];
+    self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
 
     
     NSArray * centerArr = @[@[@"更换主题",@"建议与留言",@"分享给朋友"],@[@"清除缓存",@"关于我们"]] ;
@@ -32,10 +31,32 @@
     pcv.delegate = self ;
     //按需求定是否需要
     pcv.extendCenterRightArr = @[@[@"",@"",@""],@[@"",@""]];
-    [self.view addSubview:pcv];
+//    [self.view addSubview:pcv];
+    
+    self.arr = @[@[@{@"img":@"更换主题",@"text":NSLocalizedString(@"ReplaceTopic", nil)},
+                   @{@"img":@"建议与留言",@"text":NSLocalizedString(@"Suggestions", nil)},
+                   @{@"img":@"分享给朋友",@"text":NSLocalizedString(@"Share", nil)}],
+                @[@{@"img":@"清除缓存",@"text":NSLocalizedString(@"ClearCache", nil)},
+                @{@"img":@"关于我们",@"text":NSLocalizedString(@"About", nil)},]];
 
 }
-
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return self.arr.count;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return [self.arr[section] count];
+  
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"741852"];
+    NSDictionary *dic = self.arr[indexPath.section][indexPath.row];
+    cell.textLabel.text = dic[@"text"];
+    cell.imageView.image = [UIImage imageNamed:dic[@"img"]];
+    return cell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self didSelectRowTitle:self.arr[indexPath.section][indexPath.row][@"img"]];
+}
 -(void)didSelectRowTitle:(NSString *)title{
     NSLog(@"点击：---  %@",title) ;
     if ([title isEqual: @"清除缓存"]){

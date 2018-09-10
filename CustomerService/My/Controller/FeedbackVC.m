@@ -28,7 +28,7 @@
     textV.layer.cornerRadius = 5;
     textV.keyboardType = UIKeyboardTypeDefault;
     textV.delegate = self;
-    textV.placeholder = @"发表我的建议和留言...";
+    textV.placeholder = NSLocalizedString(@"Fabiao", nil);
     self.textV = textV;
     textV.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:textV];
@@ -40,7 +40,7 @@
     }];
     
     self.button = [UIButton buttonWithType: UIButtonTypeCustom];
-    [self.button setTitle:@"确定" forState:UIControlStateNormal];
+    [self.button setTitle:NSLocalizedString(@"Sure", nil) forState:UIControlStateNormal];
     self.button.backgroundColor = MassTone;
     self.button.layer.masksToBounds = YES;
     self.button.layer.cornerRadius = 5.0;
@@ -60,7 +60,7 @@
 }
 - (void)ButtonMethod{
     [self.textV endEditing:YES];
-    [self.view showHUDWithTip:@"反馈成功"];
+    [self.view showHUDWithTip:NSLocalizedString(@"FeedbackSuccess", nil)];
 }
 - (void)textViewDidChange:(UITextView *)textView{
     NSLog(@"%@",self.textV.text);

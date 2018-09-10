@@ -1,0 +1,21 @@
+
+/* Class = "UITabBarItem"; title = "消息"; ObjectID = "80B-tv-akM"; */
+"80B-tv-akM.title" = "消息";
+
+/* Class = "UINavigationItem"; title = "设置"; ObjectID = "8MN-7r-rhQ"; */
+"8MN-7r-rhQ.title" = "设置";
+
+/* Class = "UITableViewController"; title = "消息"; ObjectID = "FVD-uV-m13"; */
+"FVD-uV-m13.title" = "消息";
+
+/* Class = "UINavigationItem"; title = "首页"; ObjectID = "Fai-ok-OBv"; */
+"Fai-ok-OBv.title" = "首页";
+
+/* Class = "UITabBarItem"; title = "设置"; ObjectID = "Q5k-d2-56q"; */
+"Q5k-d2-56q.title" = "设置";
+
+/* Class = "UITabBarItem"; title = "首页"; ObjectID = "gHX-yb-Xt3"; */
+"gHX-yb-Xt3.title" = "首页";
+
+/* Class = "UINavigationItem"; title = "消息"; ObjectID = "soU-OH-bSi"; */
+"soU-OH-bSi.title" = "消息";
