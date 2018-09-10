@@ -19,4 +19,4 @@ About = "关于我们";
 Back = "返回";
 Fabiao = "发表我的建议和留言 ...";
 Sure = "确定";
-FeedbackSuccess = @"反馈成功";
+FeedbackSuccess = "反馈成功";

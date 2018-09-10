@@ -19,6 +19,6 @@ About = "Sobre nosotros";
 Back = "retornar";
 Fabiao = "Publica mi consejo y deja UN mensaje ...";
 Sure = "Seguro que";
-FeedbackSuccess = @"Éxito de la reacción";
+FeedbackSuccess = "Éxito de la reacción";
 
 //
