@@ -1,24 +1,24 @@
 
 /* Class = "UITabBarItem"; title = "消息"; ObjectID = "80B-tv-akM"; */
-"80B-tv-akM.title" = "消息";
+"80B-tv-akM.title" = "Message";
 
 /* Class = "UINavigationItem"; title = "设置"; ObjectID = "8MN-7r-rhQ"; */
-"8MN-7r-rhQ.title" = "设置";
+"8MN-7r-rhQ.title" = "Ensemble";
 
 /* Class = "UITableViewController"; title = "消息"; ObjectID = "FVD-uV-m13"; */
-"FVD-uV-m13.title" = "消息";
+"FVD-uV-m13.title" = "Message";
 
 /* Class = "UINavigationItem"; title = "首页"; ObjectID = "Fai-ok-OBv"; */
-"Fai-ok-OBv.title" = "首页";
+"Fai-ok-OBv.title" = "Page d'accueil";
 
 /* Class = "UITableViewController"; title = "设置"; ObjectID = "JRV-WC-Bzv"; */
-"JRV-WC-Bzv.title" = "设置";
+"JRV-WC-Bzv.title" = "Ensemble";
 
 /* Class = "UITabBarItem"; title = "设置"; ObjectID = "Q5k-d2-56q"; */
-"Q5k-d2-56q.title" = "设置";
+"Q5k-d2-56q.title" = "Ensemble";
 
 /* Class = "UITabBarItem"; title = "首页"; ObjectID = "gHX-yb-Xt3"; */
-"gHX-yb-Xt3.title" = "首页";
+"gHX-yb-Xt3.title" = "Page d'accueil";
 
 /* Class = "UINavigationItem"; title = "消息"; ObjectID = "soU-OH-bSi"; */
-"soU-OH-bSi.title" = "消息";
+"soU-OH-bSi.title" = "Message";
