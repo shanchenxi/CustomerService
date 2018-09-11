@@ -49,7 +49,9 @@ static NSString *KeCellID = @"ServiceKeCell";
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
     
     self.datas = [CacheTool obtainBMKPoiInfos];
-    
+    if (self.datas.count == 0) {
+        [self moreAction];
+    }
 //    NSString *uuid = [[NSUUID UUID] UUIDString];
 
 }
