@@ -23,3 +23,16 @@ Fabiao = "发表我的建议和留言 ...";
 Sure = "确定";
 //反馈成功
 FeedbackSuccess = "反馈成功";
+//即将推出
+Comingsoon = "即将推出";
+//系统消息
+Systemmessage = "系统消息";
+//暂时没有更多消息点击进去获取更多消息
+Nomore = "暂时没有更多消息,点击进去获取更多消息";
+//清空消息
+Clearall = "清空消息";
+//取消
+Cancel = "取消";
+//请输入内容
+PleaseInputContents = "请输入内容";
+

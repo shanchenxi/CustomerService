@@ -71,8 +71,9 @@
         cell = [[HJTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
     }
     cell.imageView.image= [UIImage imageNamed:@"messagesys"];
-    cell.textLabel.text = @"系统消息";
-    cell.detailTextLabel.text = self.lastText.length==0?@"暂无更多消息，点击进入获取更多消息":self.lastText;
+    cell.textLabel.text = NSLocalizedString(@"Systemmessage", nil);
+    //System message
+    cell.detailTextLabel.text = self.lastText.length==0?NSLocalizedString(@"Nomore", nil):self.lastText;
     return cell;
 }
 

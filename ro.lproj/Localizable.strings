@@ -1,0 +1,38 @@
+/* 
+  Localizable.strings
+  CustomerService
+
+  Created by 吴宏佳 on 2018/9/10.
+  Copyright © 2018年 吴宏佳. All rights reserved.
+*/
+//更换主题
+ReplaceTopic = "schimba tema";
+//建议与留言
+Suggestions = "cu un mesaj";
+//分享给朋友
+Share = "împart cu prietenii";
+//清除缓存
+ClearCache = "eliberaţi";
+//关于我们
+About = "despre noi";
+//返回
+Back = "s - a întors";
+//发表我的建议和留言
+Fabiao = "a publicat propunerea mea şi lasă un mesaj...";
+//确定
+Sure = "sigur";
+//反馈成功
+FeedbackSuccess = "feedback - ul de succes";
+//即将推出
+Comingsoon = "în curând";
+//系统消息
+Systemmessage = "sistemul de informații";
+//暂时没有更多消息点击进去获取更多消息
+Nomore = "nu mai multe mesaje pe mai multe mesaje";
+//清空消息
+Clearall = "mesaj";
+//取消
+Cancel = "anulează";
+//请输入内容
+PleaseInputContents = "vă rog introduceţi conţinutul";
+

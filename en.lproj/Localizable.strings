@@ -23,5 +23,15 @@ Fabiao = "Post my suggestions and messages...";
 Sure = "Sure";
 //反馈成功
 FeedbackSuccess = "FeedbackSuccess";
-
-
+//即将推出
+Comingsoon = "Coming soon";
+//系统消息
+Systemmessage = "System message";
+//暂时没有更多消息点击进去获取更多消息
+Nomore = "No more news click enter to get more news";
+//清空消息
+Clearall = "Clear all";
+//取消
+Cancel = "Cancel";
+//请输入内容
+PleaseInputContents = "Please Input Contents";

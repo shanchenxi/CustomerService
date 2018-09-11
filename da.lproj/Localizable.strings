@@ -1,0 +1,38 @@
+/* 
+  Localizable.strings
+  CustomerService
+
+  Created by 吴宏佳 on 2018/9/10.
+  Copyright © 2018年 吴宏佳. All rights reserved.
+*/
+//更换主题
+ReplaceTopic = "udskiftning af tema";
+//建议与留言
+Suggestions = "forslag og bemærkninger";
+//分享给朋友
+Share = "dele til en ven";
+//清除缓存
+ClearCache = "clearing - lager";
+//关于我们
+About = "om os";
+//返回
+Back = "tilbage";
+//发表我的建议和留言
+Fabiao = "offentliggjort mit forslag og bemærkninger ...";
+//确定
+Sure = "bestemmelse af";
+//反馈
+FeedbackSuccess = "feedback";
+//即将推出
+Comingsoon = "den kommende";
+//系统消息
+Systemmessage = "system besked";
+//暂时没有更多消息点击进去获取更多消息
+Nomore = "ikke flere nyheder, klik få flere meddelelser";
+//清空消息
+Clearall = "tom besked";
+//取消
+Cancel = "at annullere";
+//请输入内容
+PleaseInputContents = "indtast venligst indhold";
+

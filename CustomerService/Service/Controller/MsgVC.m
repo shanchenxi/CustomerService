@@ -124,12 +124,12 @@ static NSString *KeCellID = @"ServiceKeCell";
 }
 - (void)moreMenuAction{
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction *sureAction = [UIAlertAction actionWithTitle:@"清空消息" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction *sureAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Clearall", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [self.datas removeAllObjects];
         [CacheTool deleteBMKPoiInfo];
         [self.tableView reloadData];
     }];
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:nil];
     
     [alert addAction:sureAction];
     [alert addAction:cancelAction];
@@ -220,7 +220,7 @@ static NSString *KeCellID = @"ServiceKeCell";
     }];
     [alert addAction:baiduAction];
 
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:nil];
     
     [alert addAction:cancelAction];
     [self presentViewController:alert animated:YES completion:nil];
@@ -257,7 +257,7 @@ static NSString *KeCellID = @"ServiceKeCell";
 - (IBAction)sendMsgAction:(UIButton *)sender {
     
     if (self.msgTF.text.length == 0) {
-        [self.view showHUDWithTip:@"请输入内容"];
+        [self.view showHUDWithTip:NSLocalizedString(@"PleaseInputContents", nil)];
         return;
     }
     

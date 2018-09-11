@@ -23,4 +23,15 @@ Fabiao = "A publié des recommandations et mon message ...";
 Sure = "Déterminer";
 //反馈成功
 FeedbackSuccess = "Le succès de rétroaction";
-
+//即将推出
+Comingsoon = "Bientôt";
+//系统消息
+Systemmessage = "Système de messagerie";
+//暂时没有更多消息点击进去获取更多消息
+Nomore = "Plus de message cliquez dans plus d'un message";
+//清空消息
+Clearall = "claire";
+//取消
+Cancel = "Annuler";
+//请输入内容
+PleaseInputContents = "Saisissez le contenu";

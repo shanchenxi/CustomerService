@@ -1,0 +1,38 @@
+/* 
+  Localizable.strings
+  CustomerService
+
+  Created by 吴宏佳 on 2018/9/10.
+  Copyright © 2018年 吴宏佳. All rights reserved.
+*/
+//更换主题
+ReplaceTopic = "wymiana";
+//建议与留言
+Suggestions = "propozycje i wiadomość";
+//分享给朋友
+Share = "podzielić się z przyjaciółmi";
+//清除缓存
+ClearCache = "magazyn";
+//关于我们
+About = "o nas";
+//返回
+Back = "powrót";
+//发表我的建议和留言
+Fabiao = "moje propozycje i opublikowane...";
+//确定
+Sure = "określenia";
+//反馈
+FeedbackSuccess = "informacje zwrotne sukces";
+//即将推出
+Comingsoon = "wkrótce";
+//系统消息
+Systemmessage = "system wiadomości";
+//暂时没有更多消息点击进去获取更多消息
+Nomore = "weszłam na nie zdobyć więcej informacji";
+//清空消息
+Clearall = "wiadomość";
+//取消
+Cancel = "odwołać";
+//请输入内容
+PleaseInputContents = "proszę podać treść";
+

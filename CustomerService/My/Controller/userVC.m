@@ -68,7 +68,7 @@
         FeedbackVC *feedbackVC = [[FeedbackVC alloc] init];
         [self.navigationController pushViewController:feedbackVC animated:YES];
     }else {
-        [self.view showHUDWithTip:@"即将推出"];
+        [self.view showHUDWithTip:NSLocalizedString(@"Comingsoon", nil)];
     }
 }
 
