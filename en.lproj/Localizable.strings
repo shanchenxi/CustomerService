@@ -35,3 +35,13 @@ Clearall = "Clear all";
 Cancel = "Cancel";
 //请输入内容
 PleaseInputContents = "Please Input Contents";
+
+//发送
+Send = "send";
+//获取更多
+LoadMore = "loadMore";
+
+Success = "Success";
+Failure = "failure";
+
+SaveAlbum = "Save to album";

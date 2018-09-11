@@ -12,8 +12,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MsgVC">
             <connections>
+                <outlet property="loadMoreBtn" destination="H6G-48-zb4" id="yVf-DD-Xqu"/>
                 <outlet property="msgTF" destination="rdQ-QZ-VLo" id="J92-c4-EgF"/>
                 <outlet property="sendBgLayoutBottom" destination="jIh-3M-rRd" id="huf-KV-cCp"/>
+                <outlet property="sendBtn" destination="G7g-mp-gJe" id="37V-er-USS"/>
                 <outlet property="tableView" destination="xfC-q5-iJj" id="Cab-xR-9Zs"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

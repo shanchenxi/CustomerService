@@ -35,4 +35,11 @@ Clearall = "tom besked";
 Cancel = "at annullere";
 //请输入内容
 PleaseInputContents = "indtast venligst indhold";
+//发送
+Send = "sender";
+//获取更多
+LoadMore = "få flere";
 
+Success = "succes";
+Failure = "fiasko";
+SaveAlbum = "redde billeder";

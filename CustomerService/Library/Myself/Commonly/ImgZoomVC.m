@@ -104,12 +104,12 @@ static NSString * const reuseIdentifier = @"ImgZoomVCCell";
 - (void)longPress:(UIImage *)image{
 
     
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction *sureAction = [UIAlertAction actionWithTitle:@"保存到相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *sureAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"SaveAlbum", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
 
     }];
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:nil];
     
     [alert addAction:sureAction];
     [alert addAction:cancelAction];
@@ -120,7 +120,7 @@ static NSString * const reuseIdentifier = @"ImgZoomVCCell";
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
 {
     
-    NSString *message = error == NULL?@"保存成功！" :@"保存失败！";
+    NSString *message = error == NULL?NSLocalizedString(@"Success", nil) :NSLocalizedString(@"Failure", nil);
     [self.view showHUDWithTip:message];
     
 }

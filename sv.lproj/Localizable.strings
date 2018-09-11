@@ -35,4 +35,11 @@ Clearall = "nyheter";
 Cancel = "inställd";
 //请输入内容
 PleaseInputContents = "ange innehåll";
+//发送
+Send = "skicka";
+//获取更多
+LoadMore = "mer";
 
+Success = "framgång";
+Failure = "misslyckas";
+SaveAlbum = "håller till.";

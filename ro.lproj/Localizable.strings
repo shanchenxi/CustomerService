@@ -36,3 +36,11 @@ Cancel = "anulează";
 //请输入内容
 PleaseInputContents = "vă rog introduceţi conţinutul";
 
+//发送
+Send = "trimite";
+//获取更多
+LoadMore = "mai multe";
+
+Success = "succes";
+Failure = "nu";
+SaveAlbum = "salvat de album";

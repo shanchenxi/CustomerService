@@ -35,4 +35,10 @@ Clearall = "Svuota il messaggio";
 Cancel = "Annullare";
 //请输入内容
 PleaseInputContents = "VI Prego di inserire il contenuto";
-
+//发送
+Send = "Trasmissione";
+//获取更多
+LoadMore = "Per di più";
+Success = "IL successo";
+Failure = "IL fallimento";
+SaveAlbum = "Salvato da Album";

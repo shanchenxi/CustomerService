@@ -35,3 +35,11 @@ Clearall = "claire";
 Cancel = "Annuler";
 //请输入内容
 PleaseInputContents = "Saisissez le contenu";
+
+//发送
+Send = "envoyer";
+//获取更多
+LoadMore = "Obtenir plus";
+Success = "succès";
+Failure = "l’échec";
+SaveAlbum = "Préservé dans l’album photo";

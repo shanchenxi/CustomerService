@@ -22,6 +22,8 @@ static NSString *KeCellID = @"ServiceKeCell";
 @property (weak, nonatomic) IBOutlet UITextField *msgTF;
 @property (strong, nonatomic) NSMutableArray *datas;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *sendBgLayoutBottom;
+@property (weak, nonatomic) IBOutlet UIButton *loadMoreBtn;
+@property (weak, nonatomic) IBOutlet UIButton *sendBtn;
 
 @end
 
@@ -29,6 +31,8 @@ static NSString *KeCellID = @"ServiceKeCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.loadMoreBtn setTitle:NSLocalizedString(@"LoadMore", nil) forState:UIControlStateNormal];
+    [self.sendBtn setTitle:NSLocalizedString(@"Send", nil) forState:UIControlStateNormal];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     

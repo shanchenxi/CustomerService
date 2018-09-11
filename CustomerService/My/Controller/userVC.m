@@ -26,11 +26,11 @@
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
 
     
-    NSArray * centerArr = @[@[@"更换主题",@"建议与留言",@"分享给朋友"],@[@"清除缓存",@"关于我们"]] ;
-    LZHPersonalCenterView * pcv = [[LZHPersonalCenterView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) CenterArr:centerArr isShowHeader:NO];
-    pcv.delegate = self ;
-    //按需求定是否需要
-    pcv.extendCenterRightArr = @[@[@"",@"",@""],@[@"",@""]];
+//    NSArray * centerArr = @[@[@"更换主题",@"建议与留言",@"分享给朋友"],@[@"清除缓存",@"关于我们"]] ;
+//    LZHPersonalCenterView * pcv = [[LZHPersonalCenterView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) CenterArr:centerArr isShowHeader:NO];
+//    pcv.delegate = self ;
+//    //按需求定是否需要
+//    pcv.extendCenterRightArr = @[@[@"",@"",@""],@[@"",@""]];
 //    [self.view addSubview:pcv];
     
     self.arr = @[@[@{@"img":@"更换主题",@"text":NSLocalizedString(@"ReplaceTopic", nil)},
@@ -79,7 +79,7 @@
 - (void)clearTmpPics
 {
     float tmpSize = [[SDImageCache sharedImageCache] getSize] / 1024 /1024;
-    NSString *clearCacheSizeStr = tmpSize >= 1 ? [NSString stringWithFormat:@"清理缓存(%.2fM)",tmpSize] : [NSString stringWithFormat:@"清理缓存(%.2fK)",tmpSize * 1024];
+    NSString *clearCacheSizeStr = tmpSize >= 1 ? [NSString stringWithFormat:@"%@(%.2fM)",NSLocalizedString(@"ClearCache", nil),tmpSize] : [NSString stringWithFormat:@"%@(%.2fK)",NSLocalizedString(@"ClearCache", nil),tmpSize * 1024];
     [[SDImageCache sharedImageCache] clearDiskOnCompletion:^{
         [self.view showHUDWithTip:clearCacheSizeStr];
     }];
